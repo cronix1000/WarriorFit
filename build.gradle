@@ -32,16 +32,17 @@ kotlin {
 }
 
 javafx {
+  version = '18'
   modules = ['javafx.controls', 'javafx.fxml']
 }
 
 dependencies {
   implementation('org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0')
   implementation("io.appwrite:sdk-for-kotlin:5.0.1")
+    implementation("org.openjfx:javafx-controls:${javafx.version}")
+    implementation("org.openjfx:javafx-fxml:${javafx.version}")
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
-  implementation("com.google.code.gson:gson:2.10.1")
-  implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
 }
 
 test {

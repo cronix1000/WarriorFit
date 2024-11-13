@@ -3,30 +3,27 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox id="background" fx:id="vbox" alignment="CENTER" prefHeight="640.0" prefWidth="1280.0" spacing="20.0" stylesheets="@../../../styles/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.warriorfit.warriorfit.HelloController">
+<VBox id="background" alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="com.warriorfit.warriorfit.HelloController">
+  <!-- background colour rose -->
+    <style>
+        .background {
+        -fx-background-color: #FF007F;
+        }
+    </style>
   <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
-   <Label prefHeight="76.0" prefWidth="54.0">
-      <font>
-         <Font size="13.0" />
-      </font>
-   </Label>
-   <ImageView fx:id="imageView" fitHeight="596.0" fitWidth="844.0" pickOnBounds="true" preserveRatio="true">
-      <VBox.margin>
-         <Insets top="60.0" />
-      </VBox.margin></ImageView>
 
   <!-- add image warrior fit logo -->
 
-  <Label fx:id="startText" text="Start your Fitness Journey:">
+  <Label text="Start your Fitness Journey:">
     <font>
-      <Font name="Agency FB Bold" size="42.0" />
+      <Font name="Agency FB" size="42.0" />
     </font>
   </Label>
   <Button fx:id="createButton" onAction="#onCreateButtonClick" prefHeight="60.0" prefWidth="249.0" text="Create an Account">
@@ -38,29 +35,14 @@
       <Font size="13.0" />
     </font>
   </Label>
-  <Label fx:id="alreadyText" text="Already have an Account?">
+  <Label text="Already have an Account?">
     <font>
-      <Font name="Agency FB Bold" size="41.0" />
+      <Font name="Agency FB" size="42.0" />
     </font>
   </Label>
-   <Button fx:id="loginButton" onAction="#onLoginButtonClick" prefHeight="60.0" prefWidth="249.0" text="Login">
-      <font>
-         <Font name="Agency FB" size="32.0" />
-      </font>
-   </Button>
-   <AnchorPane prefHeight="70.0" prefWidth="1246.0" />
-   <AnchorPane prefHeight="9.0" prefWidth="49.0">
-      <children>
-         <Button fx:id="exitButton" layoutX="1014.0" layoutY="74.0" onAction="#onExitButtonClick" prefHeight="60.0" prefWidth="158.0" text="Exit">
-            <font>
-               <Font name="Agency FB" size="32.0" />
-            </font>
-         </Button>
-         <ImageView fx:id="imageView2" fitHeight="270.0" fitWidth="407.0" layoutX="-28.0" layoutY="-68.0" pickOnBounds="true" preserveRatio="true" />
-      </children></AnchorPane>
-   <Label fx:id="startText1">
-      <font>
-         <Font name="Agency FB Bold" size="42.0" />
-      </font>
-   </Label>
+  <Button fx:id="loginButton" onAction="#onLoginButtonClick" prefHeight="60.0" prefWidth="249.0" text="Login">
+    <font>
+      <Font name="Agency FB" size="32.0" />
+    </font>
+  </Button>
 </VBox>

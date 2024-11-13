@@ -11,10 +11,6 @@ import io.appwrite.models.Database
 import io.appwrite.models.Collection
 import kotlinx.coroutines.coroutineScope
 
-//image view
-import javafx.scene.image.Image
-import javafx.scene.image.ImageView
-
 val client = Client()
     .setEndpoint("https://cloud.appwrite.io/v1")
     .setProject("673272a1002734925f33")
@@ -26,8 +22,8 @@ var todoDatabase: Database? = null
 var todoCollection: Collection? = null
 
 suspend fun prepareDatabase() {
-  //  todoDatabase = databases.get("6732731c0015a0af0d1e")
- //   todoCollection = databases.getCollection("6732731c0015a0af0d1e", "67342fdd002592c10942")
+    todoDatabase = databases.get("6732731c0015a0af0d1e")
+    todoCollection = databases.getCollection("6732731c0015a0af0d1e", "67342fdd002592c10942")
 }
 
 //suspend fun seedDatabase() {
@@ -87,9 +83,7 @@ class HelloApplication : Application() {
     override fun start(stage: Stage) {
         val fxmlLoader = FXMLLoader(HelloApplication::class.java.getResource("hello-view.fxml"))
         val scene = Scene(fxmlLoader.load(), 1280.0, 720.0)
-        //image
-        scene.stylesheets.add("styles/style.css")
-        stage.title = "Warrior Fitness"
+        stage.title = "Hello!"
         stage.scene = scene
         stage.show()
     }
@@ -97,8 +91,8 @@ class HelloApplication : Application() {
 
 suspend fun main() = coroutineScope {
     Application.launch(HelloApplication::class.java)
-    //    prepareDatabase()
+        prepareDatabase()
         //seedDatabase()
-    //    getTodos()
+        getTodos()
 
 }
