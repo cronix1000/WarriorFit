@@ -11,6 +11,10 @@ import io.appwrite.models.Database
 import io.appwrite.models.Collection
 import kotlinx.coroutines.coroutineScope
 
+//image view
+import javafx.scene.image.Image
+import javafx.scene.image.ImageView
+
 val client = Client()
     .setEndpoint("https://cloud.appwrite.io/v1")
     .setProject("673272a1002734925f33")
