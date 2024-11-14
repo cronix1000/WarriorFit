@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="Few Changes. Started Homepage">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/warriorFitness.png" afterDir="false" />
+    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="Basic Homepage done">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/warriorImage.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/warriorFit.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/warriorFit.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +114,7 @@
       <workItem from="1731471693396" duration="91000" />
       <workItem from="1731471794761" duration="2555000" />
       <workItem from="1731604266011" duration="381000" />
-      <workItem from="1731604730182" duration="6628000" />
+      <workItem from="1731604730182" duration="7482000" />
     </task>
     <task id="LOCAL-00001" summary="Few Changes. Started Homepage">
       <option name="closed" value="true" />
@@ -198,7 +196,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731608508944</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Basic Homepage done">
+      <option name="closed" value="true" />
+      <created>1731611537501</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1731611537501</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Basic Homepage done">
+      <option name="closed" value="true" />
+      <created>1731611543273</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1731611543273</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +221,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="Few Changes. Started Homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Few Changes. Started Homepage" />
+    <MESSAGE value="Basic Homepage done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic Homepage done" />
   </component>
 </project>

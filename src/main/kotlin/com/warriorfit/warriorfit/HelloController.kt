@@ -18,6 +18,7 @@ class HelloController {
 
     //image
     public lateinit var imageView: ImageView
+    public lateinit var imageView2 : ImageView
     public lateinit var vbox: VBox
 
     //text
@@ -40,7 +41,11 @@ class HelloController {
         ImageView().fitWidth = 800.0
         ImageView().fitHeight = 800.0
         imageView.image = Image("C:\\Users\\mcpla\\OneDrive\\Desktop\\Year 4\\Programming Languages\\WarriorFit\\src\\main\\resources\\warriorFitness.png")
+        ImageView().fitWidth = 800.0
+        ImageView().fitHeight = 800.0
+        imageView2.image = Image("C:\\Users\\mcpla\\OneDrive\\Desktop\\Year 4\\Programming Languages\\WarriorFit\\src\\main\\resources\\warriorImage.png")
     }
+
 
     public fun onCreateButtonClick() {
         createButton.text = "Create Button Clicked"
