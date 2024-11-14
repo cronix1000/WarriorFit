@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/warriorFit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/hello-view.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="Few Changes. Started Homepage" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +23,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Idan Gomberg &lt;crackenyogs10@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -45,6 +43,9 @@
     &quot;accountId&quot;: &quot;70d8f754-4a1f-4f40-b280-6e768e437543&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -98,11 +99,57 @@
       <workItem from="1731471693396" duration="91000" />
       <workItem from="1731471794761" duration="2555000" />
       <workItem from="1731604266011" duration="381000" />
-      <workItem from="1731604730182" duration="1124000" />
+      <workItem from="1731604730182" duration="1276000" />
     </task>
+    <task id="LOCAL-00001" summary="Few Changes. Started Homepage">
+      <option name="closed" value="true" />
+      <created>1731605904049</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731605904049</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Few Changes. Started Homepage">
+      <option name="closed" value="true" />
+      <created>1731605936647</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731605936647</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Few Changes. Started Homepage">
+      <option name="closed" value="true" />
+      <created>1731605949662</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731605949662</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Few Changes. Started Homepage">
+      <option name="closed" value="true" />
+      <created>1731605984666</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731605984666</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Few Changes. Started Homepage">
+      <option name="closed" value="true" />
+      <created>1731606002275</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731606002275</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <MESSAGE value="Few Changes. Started Homepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Few Changes. Started Homepage" />
   </component>
 </project>
