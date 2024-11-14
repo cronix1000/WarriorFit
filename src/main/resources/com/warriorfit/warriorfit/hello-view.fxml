@@ -12,6 +12,11 @@
   <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
+   <Label prefHeight="76.0" prefWidth="54.0">
+      <font>
+         <Font size="13.0" />
+      </font>
+   </Label>
    <ImageView fx:id="imageView" fitHeight="639.0" fitWidth="889.0" pickOnBounds="true" preserveRatio="true" />
 
   <!-- add image warrior fit logo -->
@@ -43,10 +48,11 @@
    <AnchorPane prefHeight="70.0" prefWidth="1246.0" />
    <AnchorPane prefHeight="200.0" prefWidth="200.0">
       <children>
-         <Button fx:id="exitButton" layoutX="1003.0" layoutY="9.0" onAction="#onExitButtonClick" prefHeight="60.0" prefWidth="158.0" text="Exit">
+         <Button fx:id="exitButton" layoutX="1014.0" layoutY="74.0" onAction="#onExitButtonClick" prefHeight="60.0" prefWidth="158.0" text="Exit">
             <font>
                <Font name="Agency FB" size="32.0" />
             </font>
          </Button>
+         <ImageView fx:id="imageView2" fitHeight="426.0" fitWidth="592.0" layoutX="-28.0" layoutY="-212.0" pickOnBounds="true" preserveRatio="true" />
       </children></AnchorPane>
 </VBox>
