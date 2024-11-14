@@ -12,7 +12,7 @@
   <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
-   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+   <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
 
   <!-- add image warrior fit logo -->
 
@@ -21,7 +21,7 @@
       <Font name="Agency FB" size="42.0" />
     </font>
   </Label>
-  <Button fx:id="createButton" onAction="#onCreateButtonClick" prefHeight="60.0" prefWidth="249.0" stylesheets="@../../../styles/style.css" text="Create an Account">
+  <Button fx:id="createButton" onAction="#onCreateButtonClick" prefHeight="60.0" prefWidth="249.0" text="Create an Account">
     <font>
       <Font name="Agency FB" size="32.0" />
     </font></Button>

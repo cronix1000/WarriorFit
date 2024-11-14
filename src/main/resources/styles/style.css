@@ -1,7 +1,8 @@
 <!-- background color red  -->
-v-box {
-    -fx-background-color: red;
+.root {
+    -fx-background-color: #ff0000;
 }
+
 <!-- smooth buttons -->
 button {
     -fx-background-color: #f4f4f4;
