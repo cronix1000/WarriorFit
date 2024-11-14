@@ -3,21 +3,16 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox id="background" alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="com.warriorfit.warriorfit.HelloController">
-  <!-- background colour rose -->
-    <style>
-        .background {
-        -fx-background-color: #FF007F;
-        }
-    </style>
+<VBox id="background" alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" stylesheets="@../../../styles/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.warriorfit.warriorfit.HelloController">
   <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
+   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
 
   <!-- add image warrior fit logo -->
 
@@ -26,7 +21,7 @@
       <Font name="Agency FB" size="42.0" />
     </font>
   </Label>
-  <Button fx:id="createButton" onAction="#onCreateButtonClick" prefHeight="60.0" prefWidth="249.0" text="Create an Account">
+  <Button fx:id="createButton" onAction="#onCreateButtonClick" prefHeight="60.0" prefWidth="249.0" stylesheets="@../../../styles/style.css" text="Create an Account">
     <font>
       <Font name="Agency FB" size="32.0" />
     </font></Button>
@@ -45,4 +40,13 @@
       <Font name="Agency FB" size="32.0" />
     </font>
   </Button>
+   <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <children>
+         <Button fx:id="exitButton" layoutX="1039.0" layoutY="91.0" onAction="#onExitButtonClick" prefHeight="60.0" prefWidth="158.0" text="Exit">
+            <font>
+               <Font name="Agency FB" size="32.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
 </VBox>
