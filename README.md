@@ -2,7 +2,7 @@ Warrior Fitness is a Fitness tracker app, that allows users to track their progr
 
 This Project was created by:
 
-Aleksandr Zheleznov 1166794
-Ethan Curtis	1166648 
-Dominik Merdzik	1169488
-Idan Gomberg	1169347
+Aleksandr Zheleznov 1166794 |
+Ethan Curtis	1166648 |
+Dominik Merdzik	1169488 |
+Idan Gomberg	1169347 
