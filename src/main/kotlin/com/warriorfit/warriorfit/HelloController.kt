@@ -8,6 +8,7 @@ import javafx.scene.image.Image
 import javax.security.auth.login.AppConfigurationEntry.LoginModuleControlFlag
 import kotlin.system.exitProcess
 import javafx.scene.image.ImageView
+import javafx.scene.layout.VBox
 
 class HelloController {
     @FXML
@@ -17,12 +18,29 @@ class HelloController {
 
     //image
     public lateinit var imageView: ImageView
+    public lateinit var vbox: VBox
+
+    //text
+    public lateinit var startText: Label
+    public lateinit var alreadyText: Label
 
     @FXML
     //import image
-    //public fun initialize() {
-    //   imageView.image = Image("../../main/resources/warriorFit.png")
-    // }
+    public fun initialize() {
+        //vbox background red
+        vbox.setStyle("-fx-background-color: red;")
+        //white text, bold, size 20, outline black text, font is neo sans
+        startText.setStyle("-fx-text-fill: white; -fx-font-size: 32px; -fx-font-weight: bold;")
+        alreadyText.setStyle("-fx-text-fill: white; -fx-font-size: 32px; -fx-font-weight: bold; ")
+        //button smooth edges
+        createButton.setStyle("-fx-background-radius: 25;")
+        loginButton.setStyle("-fx-background-radius: 25;")
+        exitButton.setStyle("-fx-background-radius: 25;")
+        //image size
+        ImageView().fitWidth = 800.0
+        ImageView().fitHeight = 800.0
+        imageView.image = Image("C:\\Users\\mcpla\\OneDrive\\Desktop\\Year 4\\Programming Languages\\WarriorFit\\src\\main\\resources\\warriorFitness.png")
+    }
 
     public fun onCreateButtonClick() {
         createButton.text = "Create Button Clicked"

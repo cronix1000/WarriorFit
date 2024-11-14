@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="Few Changes. Started Homepage">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/warriorFitness.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/warriorFit.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/warriorFit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/warriorFit.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/warriorFit.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,9 +90,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mcpla\OneDrive\Desktop\Year 4\Programming Languages\WarriorFit\src\main\resources" />
       <recent name="C:\Users\mcpla\OneDrive\Desktop\Year 4\Programming Languages\WarriorFit\src\main\resources\styles" />
       <recent name="C:\Users\mcpla\OneDrive\Desktop\Year 4\Programming Languages\WarriorFit\src\main\resources\com\warriorfit\warriorfit" />
-      <recent name="C:\Users\mcpla\OneDrive\Desktop\Year 4\Programming Languages\WarriorFit\src\main\resources" />
       <recent name="C:\Users\mcpla\OneDrive\Desktop\Year 4\Programming Languages\WarriorFit\src\main\kotlin\com\warriorfit\warriorfit" />
     </key>
   </component>
@@ -116,7 +116,7 @@
       <workItem from="1731471693396" duration="91000" />
       <workItem from="1731471794761" duration="2555000" />
       <workItem from="1731604266011" duration="381000" />
-      <workItem from="1731604730182" duration="3718000" />
+      <workItem from="1731604730182" duration="6628000" />
     </task>
     <task id="LOCAL-00001" summary="Few Changes. Started Homepage">
       <option name="closed" value="true" />
@@ -182,7 +182,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731606919247</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Few Changes. Started Homepage">
+      <option name="closed" value="true" />
+      <created>1731608487282</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1731608487282</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Few Changes. Started Homepage">
+      <option name="closed" value="true" />
+      <created>1731608508944</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731608508944</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
