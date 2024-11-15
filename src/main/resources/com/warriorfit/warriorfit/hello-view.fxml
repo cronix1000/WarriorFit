@@ -17,13 +17,16 @@
          <Font size="13.0" />
       </font>
    </Label>
-   <ImageView fx:id="imageView" fitHeight="639.0" fitWidth="889.0" pickOnBounds="true" preserveRatio="true" />
+   <ImageView fx:id="imageView" fitHeight="639.0" fitWidth="889.0" pickOnBounds="true" preserveRatio="true">
+      <VBox.margin>
+         <Insets top="60.0" />
+      </VBox.margin></ImageView>
 
   <!-- add image warrior fit logo -->
 
   <Label fx:id="startText" text="Start your Fitness Journey:">
     <font>
-      <Font name="Agency FB" size="42.0" />
+      <Font name="Agency FB Bold" size="42.0" />
     </font>
   </Label>
   <Button fx:id="createButton" onAction="#onCreateButtonClick" prefHeight="60.0" prefWidth="249.0" text="Create an Account">
@@ -37,7 +40,7 @@
   </Label>
   <Label fx:id="alreadyText" text="Already have an Account?">
     <font>
-      <Font name="Agency FB" size="42.0" />
+      <Font name="Agency FB Bold" size="41.0" />
     </font>
   </Label>
   <Button fx:id="loginButton" onAction="#onLoginButtonClick" prefHeight="60.0" prefWidth="249.0" text="Login">
@@ -55,4 +58,9 @@
          </Button>
          <ImageView fx:id="imageView2" fitHeight="426.0" fitWidth="592.0" layoutX="-28.0" layoutY="-212.0" pickOnBounds="true" preserveRatio="true" />
       </children></AnchorPane>
+   <Label fx:id="startText1" text="Start your Fitness Journey:">
+      <font>
+         <Font name="Agency FB Bold" size="42.0" />
+      </font>
+   </Label>
 </VBox>
