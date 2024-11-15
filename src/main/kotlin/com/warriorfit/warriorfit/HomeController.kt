@@ -37,20 +37,15 @@ class HomeController {
         //remove settingstext
         settingsButton.text = ""
         //graphic size and location 50x50
-      //  settingsButton.graphic = ImageView(Image("C:\\Users\\mcpla\\OneDrive\\Desktop\\Year 4\\Programming Languages\\WarriorFit\\src\\main\\resources\\settings.png"))
-        settingsButton.graphic = ImageView(Image("" + javaClass.getResource("/settings.png")))
-        (settingsButton.graphic as ImageView)?.fitWidth = 70.0
-        (settingsButton.graphic as ImageView)?.fitHeight = 70.0
-        //change graphic colour to white
-        settingsButton.graphic.style = "-fx-fill: white;"
-        //remove button background
-        settingsButton.setStyle("-fx-background-color: transparent;")
+        settingsButton.graphic = ImageView(Image("C:\\Users\\mcpla\\OneDrive\\Desktop\\Year 4\\Programming Languages\\WarriorFit\\src\\main\\resources\\settings.png"))
+        (settingsButton.graphic as ImageView)?.fitWidth = 60.0
+        (settingsButton.graphic as ImageView)?.fitHeight = 60.0
 
         //image size
         ImageView().fitWidth = 500.0
         ImageView().fitHeight = 500.0
         warriorLogo.image =
-            Image("" + javaClass.getResource("/warriorImage.png"))
+            Image("C:\\Users\\mcpla\\OneDrive\\Desktop\\Year 4\\Programming Languages\\WarriorFit\\src\\main\\resources\\warriorImage.png")
 
     }
 
