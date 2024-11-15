@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="Logo added">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/LoginController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SettingsController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SignUpController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/create-account.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/home.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/settings.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/goBack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/settings.png" afterDir="false" />
+    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="Main Page - Fixed text and font.&#10;Login Page - Empty until needed.&#10;SignUp - Empty until needed.&#10;Home - Left Space to insert Data, for Idan to insert data from Database. Included Settings Button.&#10;Settings - Set up for future use.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SettingsController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SettingsController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/goBack.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/goBack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/settings.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/settings.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +121,7 @@
       <workItem from="1731471693396" duration="91000" />
       <workItem from="1731471794761" duration="2555000" />
       <workItem from="1731604266011" duration="381000" />
-      <workItem from="1731604730182" duration="14088000" />
+      <workItem from="1731604730182" duration="16532000" />
     </task>
     <task id="LOCAL-00001" summary="Few Changes. Started Homepage">
       <option name="closed" value="true" />
@@ -232,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731612395351</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Main Page - Fixed text and font.&#10;Login Page - Empty until needed.&#10;SignUp - Empty until needed.&#10;Home - Left Space to insert Data, for Idan to insert data from Database. Included Settings Button.&#10;Settings - Set up for future use.">
+      <option name="closed" value="true" />
+      <created>1731692881283</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1731692881283</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +246,7 @@
     <MESSAGE value="Few Changes. Started Homepage" />
     <MESSAGE value="Basic Homepage done" />
     <MESSAGE value="Logo added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logo added" />
+    <MESSAGE value="Main Page - Fixed text and font.&#10;Login Page - Empty until needed.&#10;SignUp - Empty until needed.&#10;Home - Left Space to insert Data, for Idan to insert data from Database. Included Settings Button.&#10;Settings - Set up for future use." />
+    <option name="LAST_COMMIT_MESSAGE" value="Main Page - Fixed text and font.&#10;Login Page - Empty until needed.&#10;SignUp - Empty until needed.&#10;Home - Left Space to insert Data, for Idan to insert data from Database. Included Settings Button.&#10;Settings - Set up for future use." />
   </component>
 </project>
