@@ -35,7 +35,7 @@
       </BorderPane>
       <BorderPane layoutX="6.0" layoutY="260.0" prefHeight="238.0" prefWidth="1279.0">
          <bottom>
-            <Button fx:id="logoutButton" onAction="#onExitButtonClick" prefHeight="88.0" prefWidth="257.0" text="Logout" BorderPane.alignment="CENTER">
+            <Button fx:id="logoutButton" onAction="#onLogoutButtonClick" prefHeight="88.0" prefWidth="257.0" text="Logout" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Agency FB" size="39.0" />
                </font>

@@ -38,8 +38,12 @@ class HomeController {
         settingsButton.text = ""
         //graphic size and location 50x50
         settingsButton.graphic = ImageView(Image("C:\\Users\\mcpla\\OneDrive\\Desktop\\Year 4\\Programming Languages\\WarriorFit\\src\\main\\resources\\settings.png"))
-        (settingsButton.graphic as ImageView)?.fitWidth = 60.0
-        (settingsButton.graphic as ImageView)?.fitHeight = 60.0
+        (settingsButton.graphic as ImageView)?.fitWidth = 70.0
+        (settingsButton.graphic as ImageView)?.fitHeight = 70.0
+        //change graphic colour to white
+        settingsButton.graphic.style = "-fx-fill: white;"
+        //remove button background
+        settingsButton.setStyle("-fx-background-color: transparent;")
 
         //image size
         ImageView().fitWidth = 500.0

@@ -17,7 +17,7 @@
          <Font size="13.0" />
       </font>
    </Label>
-   <ImageView fx:id="imageView" fitHeight="639.0" fitWidth="889.0" pickOnBounds="true" preserveRatio="true">
+   <ImageView fx:id="imageView" fitHeight="596.0" fitWidth="844.0" pickOnBounds="true" preserveRatio="true">
       <VBox.margin>
          <Insets top="60.0" />
       </VBox.margin></ImageView>
@@ -43,22 +43,22 @@
       <Font name="Agency FB Bold" size="41.0" />
     </font>
   </Label>
-  <Button fx:id="loginButton" onAction="#onLoginButtonClick" prefHeight="60.0" prefWidth="249.0" text="Login">
-    <font>
-      <Font name="Agency FB" size="32.0" />
-    </font>
-  </Button>
+   <Button fx:id="loginButton" onAction="#onLoginButtonClick" prefHeight="60.0" prefWidth="249.0" text="Login">
+      <font>
+         <Font name="Agency FB" size="32.0" />
+      </font>
+   </Button>
    <AnchorPane prefHeight="70.0" prefWidth="1246.0" />
-   <AnchorPane prefHeight="200.0" prefWidth="200.0">
+   <AnchorPane prefHeight="9.0" prefWidth="49.0">
       <children>
          <Button fx:id="exitButton" layoutX="1014.0" layoutY="74.0" onAction="#onExitButtonClick" prefHeight="60.0" prefWidth="158.0" text="Exit">
             <font>
                <Font name="Agency FB" size="32.0" />
             </font>
          </Button>
-         <ImageView fx:id="imageView2" fitHeight="426.0" fitWidth="592.0" layoutX="-28.0" layoutY="-212.0" pickOnBounds="true" preserveRatio="true" />
+         <ImageView fx:id="imageView2" fitHeight="270.0" fitWidth="407.0" layoutX="-28.0" layoutY="-68.0" pickOnBounds="true" preserveRatio="true" />
       </children></AnchorPane>
-   <Label fx:id="startText1" text="Start your Fitness Journey:">
+   <Label fx:id="startText1">
       <font>
          <Font name="Agency FB Bold" size="42.0" />
       </font>
