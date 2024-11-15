@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="background" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.warriorfit.warriorfit.SettingsController">
+   <children>
+      <BorderPane layoutY="-2.0" prefHeight="242.0" prefWidth="1298.0">
+         <top>
+            <Label fx:id="welcomeText" text="Settings" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Agency FB Bold" size="81.0" />
+               </font>
+               <padding>
+                  <Insets top="50.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </Label>
+         </top>
+      </BorderPane>
+      <BorderPane layoutX="-2.0" layoutY="484.0" prefHeight="238.0" prefWidth="1295.0">
+         <center>
+            <Button fx:id="exitButton" onAction="#onExitButtonClick" prefHeight="60.0" prefWidth="158.0" text="Exit" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Agency FB" size="39.0" />
+               </font>
+            </Button>
+         </center>
+      </BorderPane>
+      <BorderPane layoutX="6.0" layoutY="260.0" prefHeight="238.0" prefWidth="1279.0">
+         <bottom>
+            <Button fx:id="logoutButton" onAction="#onExitButtonClick" prefHeight="88.0" prefWidth="257.0" text="Logout" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Agency FB" size="39.0" />
+               </font>
+            </Button>
+         </bottom>
+      </BorderPane>
+      <Button fx:id="backButton" layoutX="30.0" layoutY="29.0" onAction="#onBackButtonClick" prefHeight="88.0" prefWidth="202.0" text="Go Back">
+         <font>
+            <Font name="Agency FB" size="39.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

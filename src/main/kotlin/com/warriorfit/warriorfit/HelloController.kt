@@ -1,14 +1,19 @@
 package com.warriorfit.warriorfit
 
-import javafx.fxml.FXML
-import javafx.scene.control.Label
 //button
+import javafx.fxml.FXML
+import javafx.fxml.FXMLLoader
+import javafx.scene.Parent
+import javafx.scene.Scene
 import javafx.scene.control.Button
+import javafx.scene.control.Label
 import javafx.scene.image.Image
-import javax.security.auth.login.AppConfigurationEntry.LoginModuleControlFlag
-import kotlin.system.exitProcess
 import javafx.scene.image.ImageView
 import javafx.scene.layout.VBox
+import javafx.stage.Stage
+import java.io.IOException
+import kotlin.system.exitProcess
+
 
 class HelloController {
     @FXML
@@ -31,8 +36,8 @@ class HelloController {
         //vbox background red
         vbox.setStyle("-fx-background-color: red;")
         //white text, bold, size 20, outline black text, font is neo sans
-        startText.setStyle("-fx-text-fill: white; -fx-font-size: 32px; -fx-font-weight: bold;")
-        alreadyText.setStyle("-fx-text-fill: white; -fx-font-size: 32px; -fx-font-weight: bold; ")
+        startText.setStyle("-fx-text-fill: white;")
+        alreadyText.setStyle("-fx-text-fill: white;")
         //button smooth edges
         createButton.setStyle("-fx-background-radius: 25;")
         loginButton.setStyle("-fx-background-radius: 25;")
@@ -48,7 +53,33 @@ class HelloController {
 
 
     public fun onCreateButtonClick() {
+        try {
         createButton.text = "Create Button Clicked"
+
+        // Load the new FXML file temporary home file
+        val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/home.fxml"))
+        val root = loader.load<Parent>()
+
+        // Create a new scene with a specified width and height
+        val newScene = Scene(root, 1280.0, 720.0) // Set width to 800 and height to 600
+
+        // Get the current stage
+        val currentStage = createButton.scene.window as Stage
+
+        // Set the new scene on the current stage
+        currentStage.scene = newScene
+        currentStage.title = "Warrior Fitness - Home"
+
+        // Optionally, you can also set a minimum or fixed size on the stage
+        currentStage.minWidth = 1280.0
+        currentStage.minHeight = 720.0
+
+        // Display the stage
+        currentStage.show()
+
+    } catch (e: IOException) {
+        e.printStackTrace()
+    }
     }
 
     public fun onLoginButtonClick() {
