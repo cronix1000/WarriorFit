@@ -39,9 +39,9 @@ class HelloController {
         startText.setStyle("-fx-text-fill: white;")
         alreadyText.setStyle("-fx-text-fill: white;")
         //button smooth edges
-        createButton.setStyle("-fx-background-radius: 25;")
-        loginButton.setStyle("-fx-background-radius: 25;")
-        exitButton.setStyle("-fx-background-radius: 25;")
+        createButton.setStyle("-fx-background-radius: 28;")
+        loginButton.setStyle("-fx-background-radius: 28;")
+        exitButton.setStyle("-fx-background-radius: 28;")
         //image size
         ImageView().fitWidth = 800.0
         ImageView().fitHeight = 800.0
