@@ -4,8 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="Fixed Login Button, updated button pictures to match background. Logout button goes back to starting page now.">
+    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="modified scenes to take images from the resource folder">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_15_2024_7_40_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_15_2024_7_40_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_15_2024_7_52_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_15_2024_7_52_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StartWorkoutController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/start-workout-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/exercises.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/LoginController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/LoginController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SettingsController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SettingsController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SignUpController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SignUpController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/create-account.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/create-account.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/warriorFit.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,43 +35,21 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-        <option value="Class" />
-        <option value="JavaFXApplication" />
-        <option value="FxmlFile" />
-        <option value="Kotlin Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Idan Gomberg &lt;crackenyogs10@gmail.com&gt;" />
-      </list>
-    </option>
-    <option name="PUSH_AUTO_UPDATE" value="true" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;UltraSpeedDemon&quot;
+    &quot;assignee&quot;: &quot;cronix1000&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/cronix1000/WarriorFit&quot;,
-    &quot;accountId&quot;: &quot;70d8f754-4a1f-4f40-b280-6e768e437543&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/cronix1000/WarriorFit",
+    "accountId": "70d8f754-4a1f-4f40-b280-6e768e437543"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -73,11 +69,8 @@
     "Kotlin.HelloApplicationKt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "ethan",
+    "git-widget-placeholder": "Merging ethan",
     "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/mcpla/OneDrive/Desktop/Year 4/Programming Languages/WarriorFit/src/main/kotlin/com/warriorfit/warriorfit",
-    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,14 +79,6 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\mcpla\OneDrive\Desktop\Year 4\Programming Languages\WarriorFit\src\main\resources" />
-      <recent name="C:\Users\mcpla\OneDrive\Desktop\Year 4\Programming Languages\WarriorFit\src\main\resources\styles" />
-      <recent name="C:\Users\mcpla\OneDrive\Desktop\Year 4\Programming Languages\WarriorFit\src\main\resources\com\warriorfit\warriorfit" />
-      <recent name="C:\Users\mcpla\OneDrive\Desktop\Year 4\Programming Languages\WarriorFit\src\main\kotlin\com\warriorfit\warriorfit" />
-    </key>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -113,141 +98,33 @@
       <workItem from="1731471255722" duration="415000" />
       <workItem from="1731471693396" duration="91000" />
       <workItem from="1731471794761" duration="2555000" />
-      <workItem from="1731604266011" duration="381000" />
-      <workItem from="1731604730182" duration="17419000" />
+      <workItem from="1731778963971" duration="1351000" />
+      <workItem from="1731794665635" duration="1195000" />
     </task>
-    <task id="LOCAL-00001" summary="Few Changes. Started Homepage">
+    <task id="LOCAL-00001" summary="modified scenes to take images from the resource folder">
       <option name="closed" value="true" />
-      <created>1731605904049</created>
+      <created>1731779010771</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1731605904049</updated>
+      <updated>1731779010771</updated>
     </task>
-    <task id="LOCAL-00002" summary="Few Changes. Started Homepage">
+    <task id="LOCAL-00002" summary="modified scenes to take images from the resource folder">
       <option name="closed" value="true" />
-      <created>1731605936647</created>
+      <created>1731779036097</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1731605936647</updated>
+      <updated>1731779036097</updated>
     </task>
-    <task id="LOCAL-00003" summary="Few Changes. Started Homepage">
-      <option name="closed" value="true" />
-      <created>1731605949662</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1731605949662</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Few Changes. Started Homepage">
-      <option name="closed" value="true" />
-      <created>1731605984666</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1731605984666</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Few Changes. Started Homepage">
-      <option name="closed" value="true" />
-      <created>1731606002275</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1731606002275</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Few Changes. Started Homepage">
-      <option name="closed" value="true" />
-      <created>1731606023768</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1731606023768</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Few Changes. Started Homepage">
-      <option name="closed" value="true" />
-      <created>1731606033878</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1731606033878</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Few Changes. Started Homepage">
-      <option name="closed" value="true" />
-      <created>1731606919247</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1731606919247</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Few Changes. Started Homepage">
-      <option name="closed" value="true" />
-      <created>1731608487282</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1731608487282</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Few Changes. Started Homepage">
-      <option name="closed" value="true" />
-      <created>1731608508944</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1731608508944</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Basic Homepage done">
-      <option name="closed" value="true" />
-      <created>1731611537501</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1731611537501</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Basic Homepage done">
-      <option name="closed" value="true" />
-      <created>1731611543273</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1731611543273</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Logo added">
-      <option name="closed" value="true" />
-      <created>1731612395351</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1731612395351</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Main Page - Fixed text and font.&#10;Login Page - Empty until needed.&#10;SignUp - Empty until needed.&#10;Home - Left Space to insert Data, for Idan to insert data from Database. Included Settings Button.&#10;Settings - Set up for future use.">
-      <option name="closed" value="true" />
-      <created>1731692881283</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1731692881283</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Fixed Login Button, updated button pictures to match background. Logout button goes back to starting page now.">
-      <option name="closed" value="true" />
-      <created>1731700549877</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1731700549877</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init" />
-    <MESSAGE value="Few Changes. Started Homepage" />
-    <MESSAGE value="Basic Homepage done" />
-    <MESSAGE value="Logo added" />
-    <MESSAGE value="Main Page - Fixed text and font.&#10;Login Page - Empty until needed.&#10;SignUp - Empty until needed.&#10;Home - Left Space to insert Data, for Idan to insert data from Database. Included Settings Button.&#10;Settings - Set up for future use." />
+    <MESSAGE value="modified scenes to take images from the resource folder" />
     <MESSAGE value="Fixed Login Button, updated button pictures to match background. Logout button goes back to starting page now." />
     <option name="LAST_COMMIT_MESSAGE" value="Fixed Login Button, updated button pictures to match background. Logout button goes back to starting page now." />
   </component>

@@ -38,26 +38,36 @@ class HelloController {
         //white text, bold, size 20, outline black text, font is neo sans
         startText.setStyle("-fx-text-fill: white;")
         alreadyText.setStyle("-fx-text-fill: white;")
+
+        //make all button background white
+        createButton.setStyle("-fx-background-color: white;")
+        loginButton.setStyle("-fx-background-color: white;")
+        exitButton.setStyle("-fx-background-color: white;")
+
         //button smooth edges
         createButton.setStyle("-fx-background-radius: 28;")
         loginButton.setStyle("-fx-background-radius: 28;")
         exitButton.setStyle("-fx-background-radius: 28;")
+
         //image size
         ImageView().fitWidth = 800.0
         ImageView().fitHeight = 800.0
-        imageView.image = Image("C:\\Users\\mcpla\\OneDrive\\Desktop\\Year 4\\Programming Languages\\WarriorFit\\src\\main\\resources\\warriorFitness.png")
+
         ImageView().fitWidth = 800.0
         ImageView().fitHeight = 800.0
-        imageView2.image = Image("C:\\Users\\mcpla\\OneDrive\\Desktop\\Year 4\\Programming Languages\\WarriorFit\\src\\main\\resources\\warriorImage.png")
+        //image
+        imageView.image = Image("" + javaClass.getResource("/warriorFitness.png"))
+        imageView2.image = Image("" + javaClass.getResource("/warriorImage.png"))
+        //image view background transparent
+        imageView.setStyle("-fx-background-color: transparent;")
     }
-
 
     public fun onCreateButtonClick() {
         try {
         createButton.text = "Create Button Clicked"
 
         // Load the new FXML file temporary home file
-        val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/home.fxml"))
+        val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/create-account.fxml"))
         val root = loader.load<Parent>()
 
         // Create a new scene with a specified width and height
@@ -83,7 +93,33 @@ class HelloController {
     }
 
     public fun onLoginButtonClick() {
-        loginButton.text = "Login Button Clicked"
+        try {
+            createButton.text = "Create Button Clicked"
+
+            val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/login.fxml"))
+            val root = loader.load<Parent>()
+
+            // Create a new scene with a specified width and height
+            val newScene = Scene(root, 1280.0, 720.0) // Set width to 800 and height to 600
+
+            // Get the current stage
+            val currentStage = loginButton.scene.window as Stage
+
+            // Set the new scene on the current stage
+            currentStage.scene = newScene
+            currentStage.title = "Warrior Fitness - Login"
+
+            // Optionally, you can also set a minimum or fixed size on the stage
+            currentStage.minWidth = 1280.0
+            currentStage.minHeight = 720.0
+
+            // Display the stage
+            currentStage.show()
+
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+
     }
 
     public fun onExitButtonClick() {

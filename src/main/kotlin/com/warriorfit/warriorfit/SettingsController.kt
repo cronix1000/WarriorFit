@@ -30,6 +30,11 @@ class SettingsController {
         //background red
         background.setStyle("-fx-background-color: red;")
 
+        //make buttons background white
+        backButton.setStyle("-fx-background-color: white;")
+        exitButton.setStyle("-fx-background-color: white;")
+        logoutButton.setStyle("-fx-background-color: white;")
+
         backButton.setStyle("-fx-background-radius: 28;")
         exitButton.setStyle("-fx-background-radius: 28;")
         logoutButton.setStyle("-fx-background-radius: 28;")
@@ -38,7 +43,7 @@ class SettingsController {
         welcomeText.setStyle("-fx-text-fill: white;")
 
         //backbutton set image to back arrow
-        backButton.graphic = ImageView(Image("C:\\Users\\mcpla\\OneDrive\\Desktop\\Year 4\\Programming Languages\\WarriorFit\\src\\main\\resources\\goBack.png"))
+        backButton.graphic = ImageView(Image("" + javaClass.getResource("/goBack.png")))
         //remove backbuttontext
         backButton.text = ""
         (backButton.graphic as ImageView)?.fitWidth = 70.0

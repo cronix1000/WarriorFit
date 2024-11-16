@@ -31,8 +31,14 @@
       </BorderPane>
       <ImageView fx:id="warriorLogo" fitHeight="276.0" fitWidth="369.0" layoutX="15.0" layoutY="443.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="settingsButton" layoutX="1131.0" layoutY="23.0" mnemonicParsing="false" onAction="#onSettingsButtonClick" text="Settings">
+
          <font>
             <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="startWorkoutButton" layoutX="421.0" layoutY="359.0" mnemonicParsing="false" onAction="#onStartWorkoutButtonClick" text="Start Workout">
+         <font>
+            <Font name="System Bold" size="53.0" />
          </font>
       </Button>
 
