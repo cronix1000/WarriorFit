@@ -37,7 +37,7 @@ class HomeController {
         //remove settingstext
         settingsButton.text = ""
         //graphic size and location 50x50
-        settingsButton.graphic = ImageView(Image("C:\\Users\\mcpla\\OneDrive\\Desktop\\Year 4\\Programming Languages\\WarriorFit\\src\\main\\resources\\settings.png"))
+      //  settingsButton.graphic = ImageView(Image("C:\\Users\\mcpla\\OneDrive\\Desktop\\Year 4\\Programming Languages\\WarriorFit\\src\\main\\resources\\settings.png"))
         settingsButton.graphic = ImageView(Image("" + javaClass.getResource("/settings.png")))
         (settingsButton.graphic as ImageView)?.fitWidth = 70.0
         (settingsButton.graphic as ImageView)?.fitHeight = 70.0

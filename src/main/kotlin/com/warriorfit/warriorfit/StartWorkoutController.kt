@@ -36,7 +36,7 @@ class StartWorkoutController {
     private val gson = Gson()
 
     fun loadExercises(): List<Exercise> {
-        var jsonString = javaClass.getResourceAsStream("/exercises.json")?.bufferedReader()?.readText()
+        var jsonString = javaClass.getResourceAsStream("exercises.json")?.bufferedReader()?.readText()
             ?: throw Exception("Could not find exercises.json")
 
         return try {
