@@ -32,6 +32,7 @@ class StartWorkoutController {
 
         excersises.map { println(it) }
     }
+
     private val gson = Gson()
 
     fun loadExercises(): List<Exercise> {
