@@ -69,7 +69,7 @@ class LoginController {
     public lateinit var background: AnchorPane
 
     //username and password text field
-    public lateinit var usernameTextField: TextField //used to check if username is correct
+    public lateinit var emailTextField: TextField //used to check if username is correct
     public lateinit var passwordTextField: TextField //used to check if password is correct
 
     public lateinit var usernameText: Label
@@ -110,7 +110,7 @@ class LoginController {
     //on submit button click
     public fun onSubmitButtonClick() {
             login(
-                email = usernameTextField.text,
+                email = emailTextField.text,
                 password = passwordTextField.text,
                 onSuccess = { proceedFunction() },  // Lambda for success callback
                 onError = { e -> println("Failed: ${e.message}") }  // Lambda for error callback
