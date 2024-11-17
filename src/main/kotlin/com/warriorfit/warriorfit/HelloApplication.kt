@@ -26,8 +26,8 @@ var todoDatabase: Database? = null
 var todoCollection: Collection? = null
 
 suspend fun prepareDatabase() {
-    todoDatabase = databases.get("6732731c0015a0af0d1e")
-    todoCollection = databases.getCollection("6732731c0015a0af0d1e", "67342fdd002592c10942")
+  //  todoDatabase = databases.get("6732731c0015a0af0d1e")
+ //   todoCollection = databases.getCollection("6732731c0015a0af0d1e", "67342fdd002592c10942")
 }
 
 //suspend fun seedDatabase() {
@@ -97,8 +97,8 @@ class HelloApplication : Application() {
 
 suspend fun main() = coroutineScope {
     Application.launch(HelloApplication::class.java)
-        prepareDatabase()
+    //    prepareDatabase()
         //seedDatabase()
-        getTodos()
+    //    getTodos()
 
 }
