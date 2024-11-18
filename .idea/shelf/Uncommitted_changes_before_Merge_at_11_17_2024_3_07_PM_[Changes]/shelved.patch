@@ -1,0 +1,177 @@
+Index: src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.warriorfit.warriorfit\r\n\r\nimport javafx.application.Application\r\nimport javafx.fxml.FXMLLoader\r\nimport javafx.scene.Scene\r\nimport javafx.stage.Stage\r\nimport io.appwrite.Client\r\nimport io.appwrite.ID\r\nimport io.appwrite.services.Databases\r\nimport io.appwrite.models.Database\r\nimport io.appwrite.models.Collection\r\nimport kotlinx.coroutines.coroutineScope\r\n\r\n//image view\r\nimport javafx.scene.image.Image\r\nimport javafx.scene.image.ImageView\r\n\r\nval client = Client()\r\n    .setEndpoint(\"https://cloud.appwrite.io/v1\")\r\n    .setProject(\"673272a1002734925f33\")\r\n.setKey(\"standard_6968dc3490c3429654fa0cc9c066b9cd8ed4b1c8269509c77c9efe5bd8a54733bcce1c24768e9040b7289b59810e9af3fe9effe7dc8069abf9c4c50e4a590f92e0c234c9f04c0779ff82fb08d0e1f00b54d77a5921a0437f22377afbe16c50e500346d10dc338beba3bd4e001d27a6910c97add504367ab26bb18c262754248f\");\r\n\r\nval databases = Databases(client)\r\n\r\nvar todoDatabase: Database? = null\r\nvar todoCollection: Collection? = null\r\n\r\nsuspend fun prepareDatabase() {\r\n  //  todoDatabase = databases.get(\"6732731c0015a0af0d1e\")\r\n //   todoCollection = databases.getCollection(\"6732731c0015a0af0d1e\", \"67342fdd002592c10942\")\r\n}\r\n\r\n//suspend fun seedDatabase() {\r\n//    val testTodo1 = mapOf(\r\n//        \"title\" to \"Buy apples\",\r\n//        \"description\" to \"At least 2KGs\",\r\n//        \"isComplete\" to true\r\n//    )\r\n//\r\n//    val testTodo2 = mapOf(\r\n//        \"title\" to \"Wash the apples\",\r\n//        \"isComplete\" to true\r\n//    )\r\n//\r\n//    val testTodo3 = mapOf(\r\n//        \"title\" to \"Cut the apples\",\r\n//        \"description\" to \"Don't forget to pack them in a box\",\r\n//        \"isComplete\" to false\r\n//    )\r\n//\r\n//    databases.createDocument(\r\n//        databaseId = todoDatabase?.id!!,\r\n//        collectionId = todoCollection?.id!!,\r\n//        documentId = ID.unique(),\r\n//        data = testTodo1\r\n//    )\r\n//\r\n//    databases.createDocument(\r\n//        databaseId = todoDatabase?.id!!,\r\n//        collectionId = todoCollection?.id!!,\r\n//        documentId = ID.unique(),\r\n//        data = testTodo2\r\n//    )\r\n//\r\n//    databases.createDocument(\r\n//        databaseId = todoDatabase?.id!!,\r\n//        collectionId = todoCollection?.id!!,\r\n//        documentId = ID.unique(),\r\n//        data = testTodo3\r\n//    )\r\n//}\r\n\r\nsuspend fun getTodos() {\r\n    val todos = databases.listDocuments(todoDatabase?.id!!, todoCollection?.id!!)\r\n    for (todo in todos.documents) {\r\n        println(\r\n            \"\"\"\r\n            Title: ${todo.data[\"title\"]}\r\n            Description: ${todo.data[\"description\"]}\r\n            Is Todo Complete: ${todo.data[\"isComplete\"]}\r\n            \"\"\".trimIndent()\r\n        )\r\n    }\r\n}\r\n\r\nclass HelloApplication : Application() {\r\n    override fun start(stage: Stage) {\r\n        val fxmlLoader = FXMLLoader(HelloApplication::class.java.getResource(\"hello-view.fxml\"))\r\n        val scene = Scene(fxmlLoader.load(), 1280.0, 720.0)\r\n        //image\r\n        scene.stylesheets.add(\"styles/style.css\")\r\n        stage.title = \"Warrior Fitness\"\r\n        stage.scene = scene\r\n        stage.show()\r\n    }\r\n}\r\n\r\nsuspend fun main() = coroutineScope {\r\n    Application.launch(HelloApplication::class.java)\r\n    //    prepareDatabase()\r\n        //seedDatabase()\r\n    //    getTodos()\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt b/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt
+--- a/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt	(revision 46d8976508e357d3bb9c66000c2e3db4c9a9ca7f)
++++ b/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt	(date 1731873871232)
+@@ -26,61 +26,8 @@
+ var todoCollection: Collection? = null
+ 
+ suspend fun prepareDatabase() {
+-  //  todoDatabase = databases.get("6732731c0015a0af0d1e")
+- //   todoCollection = databases.getCollection("6732731c0015a0af0d1e", "67342fdd002592c10942")
+-}
+-
+-//suspend fun seedDatabase() {
+-//    val testTodo1 = mapOf(
+-//        "title" to "Buy apples",
+-//        "description" to "At least 2KGs",
+-//        "isComplete" to true
+-//    )
+-//
+-//    val testTodo2 = mapOf(
+-//        "title" to "Wash the apples",
+-//        "isComplete" to true
+-//    )
+-//
+-//    val testTodo3 = mapOf(
+-//        "title" to "Cut the apples",
+-//        "description" to "Don't forget to pack them in a box",
+-//        "isComplete" to false
+-//    )
+-//
+-//    databases.createDocument(
+-//        databaseId = todoDatabase?.id!!,
+-//        collectionId = todoCollection?.id!!,
+-//        documentId = ID.unique(),
+-//        data = testTodo1
+-//    )
+-//
+-//    databases.createDocument(
+-//        databaseId = todoDatabase?.id!!,
+-//        collectionId = todoCollection?.id!!,
+-//        documentId = ID.unique(),
+-//        data = testTodo2
+-//    )
+-//
+-//    databases.createDocument(
+-//        databaseId = todoDatabase?.id!!,
+-//        collectionId = todoCollection?.id!!,
+-//        documentId = ID.unique(),
+-//        data = testTodo3
+-//    )
+-//}
+-
+-suspend fun getTodos() {
+-    val todos = databases.listDocuments(todoDatabase?.id!!, todoCollection?.id!!)
+-    for (todo in todos.documents) {
+-        println(
+-            """
+-            Title: ${todo.data["title"]}
+-            Description: ${todo.data["description"]}
+-            Is Todo Complete: ${todo.data["isComplete"]}
+-            """.trimIndent()
+-        )
+-    }
++    todoDatabase = databases.get("6732731c0015a0af0d1e")
++    todoCollection = databases.getCollection("6732731c0015a0af0d1e", "67342fdd002592c10942")
+ }
+ 
+ class HelloApplication : Application() {
+@@ -97,8 +44,4 @@
+ 
+ suspend fun main() = coroutineScope {
+     Application.launch(HelloApplication::class.java)
+-    //    prepareDatabase()
+-        //seedDatabase()
+-    //    getTodos()
+-
+ }
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"a3e08e84-f47b-4547-b14c-21d9b21c5c36\" name=\"Changes\" comment=\"modified scenes to take images from the resource folder\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StartWorkoutController.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StartWorkoutController.kt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/start-workout-view.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/start-workout-view.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\"><![CDATA[{\r\n  \"lastFilter\": {\r\n    \"state\": \"OPEN\",\r\n    \"assignee\": \"cronix1000\"\r\n  }\r\n}]]></component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/cronix1000/WarriorFit.git\",\r\n    \"accountId\": \"8a793082-98b5-425c-bdcb-6f4fb78b8a2f\"\r\n  }\r\n}]]></component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2omOOoV0NO0kLLlL37cai3PUkjQ\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Gradle.Build WarriorFit.executor&quot;: &quot;Run&quot;,\r\n    &quot;Gradle.WarriorFit.executor&quot;: &quot;Run&quot;,\r\n    &quot;Kotlin.HelloApplicationKt.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"a3e08e84-f47b-4547-b14c-21d9b21c5c36\" name=\"Changes\" comment=\"\" />\r\n      <created>1731471254711</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1731471254711</updated>\r\n      <workItem from=\"1731471255722\" duration=\"415000\" />\r\n      <workItem from=\"1731471693396\" duration=\"91000\" />\r\n      <workItem from=\"1731471794761\" duration=\"2555000\" />\r\n      <workItem from=\"1731778963971\" duration=\"1351000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"modified scenes to take images from the resource folder\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1731779010771</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1731779010771</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"modified scenes to take images from the resource folder\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1731779036097</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1731779036097</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"modified scenes to take images from the resource folder\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"modified scenes to take images from the resource folder\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 46d8976508e357d3bb9c66000c2e3db4c9a9ca7f)
++++ b/.idea/workspace.xml	(date 1731873871484)
+@@ -4,12 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="modified scenes to take images from the resource folder">
++    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="Login Button works navigation to start workout page">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StartWorkoutController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StartWorkoutController.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/start-workout-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/start-workout-view.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -22,20 +19,21 @@
+     </projectState>
+   </component>
+   <component name="Git.Settings">
++    <option name="PUSH_AUTO_UPDATE" value="true" />
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+-  "lastFilter": {
+-    "state": "OPEN",
+-    "assignee": "cronix1000"
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;cronix1000&quot;
+   }
+-}]]></component>
+-  <component name="GithubPullRequestsUISettings"><![CDATA[{
+-  "selectedUrlAndAccountId": {
+-    "url": "https://github.com/cronix1000/WarriorFit.git",
+-    "accountId": "8a793082-98b5-425c-bdcb-6f4fb78b8a2f"
++}</component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/cronix1000/WarriorFit.git&quot;,
++    &quot;accountId&quot;: &quot;8a793082-98b5-425c-bdcb-6f4fb78b8a2f&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="ProblemsViewState">
+     <option name="selectedTabId" value="CurrentFile" />
+   </component>
+@@ -83,7 +81,8 @@
+       <workItem from="1731471255722" duration="415000" />
+       <workItem from="1731471693396" duration="91000" />
+       <workItem from="1731471794761" duration="2555000" />
+-      <workItem from="1731778963971" duration="1351000" />
++      <workItem from="1731778963971" duration="1629000" />
++      <workItem from="1731873636596" duration="233000" />
+     </task>
+     <task id="LOCAL-00001" summary="modified scenes to take images from the resource folder">
+       <option name="closed" value="true" />
+@@ -101,7 +100,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1731779036097</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Login Button works navigation to start workout page">
++      <option name="closed" value="true" />
++      <created>1731780447787</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1731780447787</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -109,6 +116,7 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="modified scenes to take images from the resource folder" />
+-    <option name="LAST_COMMIT_MESSAGE" value="modified scenes to take images from the resource folder" />
++    <MESSAGE value="Login Button works navigation to start workout page" />
++    <option name="LAST_COMMIT_MESSAGE" value="Login Button works navigation to start workout page" />
+   </component>
+ </project>
+\ No newline at end of file

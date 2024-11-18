@@ -10,86 +10,86 @@
 
 
 <AnchorPane fx:id="background" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.warriorfit.warriorfit.LoginController">
-   <children>
-      <BorderPane layoutX="-1.0" layoutY="-2.0" prefHeight="176.0" prefWidth="1284.0">
-         <center>
-            <Label fx:id="loginText" prefHeight="138.0" prefWidth="517.0" text="Login" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="Agency FB Bold" size="81.0" />
-               </font>
-               <padding>
-                  <Insets left="200.0" />
-               </padding>
-            </Label>
-         </center>
-      </BorderPane>
-      <BorderPane layoutX="-6.0" layoutY="194.0" prefHeight="320.0" prefWidth="1296.0">
-         <left>
-            <Label fx:id="usernameText" prefHeight="138.0" prefWidth="430.0" text="Username:" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="Agency FB Bold" size="58.0" />
-               </font>
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin>
-               <padding>
-                  <Insets left="200.0" />
-               </padding>
-            </Label>
-         </left>
-         <bottom>
-            <BorderPane prefHeight="157.0" prefWidth="1296.0" BorderPane.alignment="CENTER">
-               <left>
-                  <Label fx:id="passwordText" prefHeight="138.0" prefWidth="430.0" text="Password:" BorderPane.alignment="CENTER">
-                     <font>
+    <children>
+        <BorderPane layoutX="-1.0" layoutY="-2.0" prefHeight="176.0" prefWidth="1284.0">
+            <center>
+                <Label fx:id="loginText" prefHeight="138.0" prefWidth="517.0" text="Login" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="Agency FB Bold" size="81.0" />
+                    </font>
+                    <padding>
+                        <Insets left="200.0" />
+                    </padding>
+                </Label>
+            </center>
+        </BorderPane>
+        <BorderPane layoutX="-6.0" layoutY="194.0" prefHeight="320.0" prefWidth="1296.0">
+            <left>
+                <Label fx:id="usernameText" prefHeight="138.0" prefWidth="430.0" text="Email:" BorderPane.alignment="CENTER">
+                    <font>
                         <Font name="Agency FB Bold" size="58.0" />
-                     </font>
-                     <BorderPane.margin>
+                    </font>
+                    <BorderPane.margin>
                         <Insets />
-                     </BorderPane.margin>
-                     <padding>
+                    </BorderPane.margin>
+                    <padding>
                         <Insets left="200.0" />
-                     </padding>
-                  </Label>
-               </left>
-               <right>
-                  <Label fx:id="welcomeText31" prefHeight="138.0" prefWidth="346.0" BorderPane.alignment="CENTER">
-                     <font>
+                    </padding>
+                </Label>
+            </left>
+            <bottom>
+                <BorderPane prefHeight="157.0" prefWidth="1296.0" BorderPane.alignment="CENTER">
+                    <left>
+                        <Label fx:id="passwordText" prefHeight="138.0" prefWidth="430.0" text="Password:" BorderPane.alignment="CENTER">
+                            <font>
+                                <Font name="Agency FB Bold" size="58.0" />
+                            </font>
+                            <BorderPane.margin>
+                                <Insets />
+                            </BorderPane.margin>
+                            <padding>
+                                <Insets left="200.0" />
+                            </padding>
+                        </Label>
+                    </left>
+                    <right>
+                        <Label fx:id="welcomeText31" prefHeight="138.0" prefWidth="346.0" BorderPane.alignment="CENTER">
+                            <font>
+                                <Font name="Agency FB Bold" size="58.0" />
+                            </font>
+                            <padding>
+                                <Insets left="200.0" />
+                            </padding>
+                        </Label>
+                    </right>
+                    <center>
+                        <TextField fx:id="passwordTextField" prefHeight="59.0" prefWidth="50.0" BorderPane.alignment="CENTER" />
+                    </center>
+                </BorderPane>
+            </bottom>
+            <center>
+                <TextField fx:id="emailTextField" prefHeight="59.0" prefWidth="50.0" BorderPane.alignment="CENTER" />
+            </center>
+            <right>
+                <Label fx:id="welcomeText3" prefHeight="138.0" prefWidth="346.0" BorderPane.alignment="CENTER">
+                    <font>
                         <Font name="Agency FB Bold" size="58.0" />
-                     </font>
-                     <padding>
+                    </font>
+                    <padding>
                         <Insets left="200.0" />
-                     </padding>
-                  </Label>
-               </right>
-               <center>
-                  <TextField fx:id="passwordTextField" prefHeight="59.0" prefWidth="50.0" BorderPane.alignment="CENTER" />
-               </center>
-            </BorderPane>
-         </bottom>
-         <center>
-            <TextField fx:id="usernameTextField" prefHeight="59.0" prefWidth="50.0" BorderPane.alignment="CENTER" />
-         </center>
-         <right>
-            <Label fx:id="welcomeText3" prefHeight="138.0" prefWidth="346.0" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="Agency FB Bold" size="58.0" />
-               </font>
-               <padding>
-                  <Insets left="200.0" />
-               </padding>
-            </Label>
-         </right>
-      </BorderPane>
-      <Button fx:id="submitButton" layoutX="533.0" layoutY="577.0" onAction="#onSubmitButtonClick" prefHeight="60.0" prefWidth="249.0" text="Submit">
-         <font>
-            <Font name="Agency FB" size="50.0" />
-         </font>
-      </Button>
-      <Button fx:id="backButton" layoutX="40.0" layoutY="39.0" onAction="#onBackButtonClick" prefHeight="88.0" prefWidth="202.0" text="Go Back">
-         <font>
-            <Font name="Agency FB" size="39.0" />
-         </font>
-      </Button>
-   </children>
+                    </padding>
+                </Label>
+            </right>
+        </BorderPane>
+        <Button fx:id="submitButton" layoutX="533.0" layoutY="577.0" onAction="#onSubmitButtonClick" prefHeight="60.0" prefWidth="249.0" text="Submit">
+            <font>
+                <Font name="Agency FB" size="50.0" />
+            </font>
+        </Button>
+        <Button fx:id="backButton" layoutX="40.0" layoutY="39.0" onAction="#onBackButtonClick" prefHeight="88.0" prefWidth="202.0" text="Go Back">
+            <font>
+                <Font name="Agency FB" size="39.0" />
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

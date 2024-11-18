@@ -26,7 +26,7 @@
             </Label>
          </left>
          <center>
-            <TextField fx:id="usernameTextField" prefHeight="59.0" prefWidth="50.0" BorderPane.alignment="CENTER" />
+            <TextField fx:id="usernameField" prefHeight="59.0" prefWidth="50.0" BorderPane.alignment="CENTER"  />
          </center>
          <right>
             <Label fx:id="welcomeText3" prefHeight="138.0" prefWidth="346.0" BorderPane.alignment="CENTER">

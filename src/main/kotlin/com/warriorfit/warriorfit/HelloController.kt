@@ -38,36 +38,26 @@ class HelloController {
         //white text, bold, size 20, outline black text, font is neo sans
         startText.setStyle("-fx-text-fill: white;")
         alreadyText.setStyle("-fx-text-fill: white;")
-
-        //make all button background white
-        createButton.setStyle("-fx-background-color: white;")
-        loginButton.setStyle("-fx-background-color: white;")
-        exitButton.setStyle("-fx-background-color: white;")
-
         //button smooth edges
         createButton.setStyle("-fx-background-radius: 28;")
         loginButton.setStyle("-fx-background-radius: 28;")
         exitButton.setStyle("-fx-background-radius: 28;")
-
         //image size
         ImageView().fitWidth = 800.0
         ImageView().fitHeight = 800.0
-
+        imageView.image = Image("" + javaClass.getResource("/warriorFitness.png"))
         ImageView().fitWidth = 800.0
         ImageView().fitHeight = 800.0
-        //image
-        imageView.image = Image("" + javaClass.getResource("/warriorFitness.png"))
         imageView2.image = Image("" + javaClass.getResource("/warriorImage.png"))
-        //image view background transparent
-        imageView.setStyle("-fx-background-color: transparent;")
     }
+
 
     public fun onCreateButtonClick() {
         try {
         createButton.text = "Create Button Clicked"
 
         // Load the new FXML file temporary home file
-        val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/create-account.fxml"))
+        val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/home.fxml"))
         val root = loader.load<Parent>()
 
         // Create a new scene with a specified width and height
@@ -78,7 +68,7 @@ class HelloController {
 
         // Set the new scene on the current stage
         currentStage.scene = newScene
-        currentStage.title = "Warrior Fitness - Create Account"
+        currentStage.title = "Warrior Fitness - Home"
 
         // Optionally, you can also set a minimum or fixed size on the stage
         currentStage.minWidth = 1280.0
@@ -94,8 +84,6 @@ class HelloController {
 
     public fun onLoginButtonClick() {
         try {
-            createButton.text = "Create Button Clicked"
-
             val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/login.fxml"))
             val root = loader.load<Parent>()
 
@@ -107,7 +95,7 @@ class HelloController {
 
             // Set the new scene on the current stage
             currentStage.scene = newScene
-            currentStage.title = "Warrior Fitness - Login"
+            currentStage.title = "Warrior Fitness - Settings"
 
             // Optionally, you can also set a minimum or fixed size on the stage
             currentStage.minWidth = 1280.0
@@ -115,11 +103,10 @@ class HelloController {
 
             // Display the stage
             currentStage.show()
-
-        } catch (e: IOException) {
-            e.printStackTrace()
         }
-
+     catch (e: IOException) {
+        e.printStackTrace()
+    }
     }
 
     public fun onExitButtonClick() {
