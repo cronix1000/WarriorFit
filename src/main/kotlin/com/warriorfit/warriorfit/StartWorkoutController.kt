@@ -5,13 +5,15 @@ import com.google.gson.Gson
 import javafx.application.Platform
 import javafx.collections.FXCollections
 import javafx.fxml.FXML
+import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
-import javafx.scene.control.Alert
+import javafx.scene.Parent
+import javafx.scene.Scene
+import javafx.scene.control.*
 import javafx.scene.control.Alert.AlertType
-import javafx.scene.control.Label
-import javafx.scene.control.ListView
-import javafx.scene.control.TextArea
+import javafx.stage.Stage
 import kotlinx.serialization.Serializable
+import java.io.IOException
 import java.net.URL
 import java.util.*
 
@@ -31,8 +33,6 @@ data class Exercise(
     val id: String
 )
 
-
-
 class StartWorkoutController : Initializable {
 
     // FXML Controls
@@ -50,6 +50,9 @@ class StartWorkoutController : Initializable {
 
     @FXML
     private lateinit var workoutNotesArea: TextArea
+
+    @FXML
+    public lateinit var backButton: Button
 
     private var exercises: List<Exercise> = listOf()
     private val selectedExercises = mutableListOf<Exercise>()
@@ -72,8 +75,7 @@ class StartWorkoutController : Initializable {
             newValue?.let { showExerciseDetails(it) }
         }
 
-        // Initialize workout notes
-        workoutNotesArea.text = "Add notes about your workout..."
+
 
         updateTotalXP()
     }
@@ -153,6 +155,33 @@ class StartWorkoutController : Initializable {
             val alert = Alert(Alert.AlertType.ERROR)
             alert.contentText = e.message
             alert.show()
+        }
+    }
+
+    public fun onBackButtonClick() {
+        try {
+            val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/home.fxml"))
+            val root = loader.load<Parent>()
+
+            // Create a new scene with a specified width and height
+            val newScene = Scene(root, 1280.0, 720.0) // Set width to 800 and height to 600
+
+            // Get the current stage
+            val currentStage = backButton.scene.window as Stage
+
+            // Set the new scene on the current stage
+            currentStage.scene = newScene
+            currentStage.title = "Warrior Fitness"
+
+            // Optionally, you can also set a minimum or fixed size on the stage
+            currentStage.minWidth = 1280.0
+            currentStage.minHeight = 720.0
+
+            // Display the stage
+            currentStage.show()
+
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
     }
 

@@ -42,13 +42,30 @@ class LoginController {
     ) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
+                // Create a session for the user
                 val session = account.createEmailPasswordSession(
                     email = email,
                     password = password
                 )
                 val userId = session.userId
 
+                // Store the userId in AppState
                 AppState.setUserId(userId)
+
+                // Fetch the user's details from the database based on email
+                val response = databases.listDocuments(
+                    databaseId = "6732731c0015a0af0d1e",
+                    collectionId = "6736dacb0021a324feed",
+                    //queries = listOf("email.equal('$email')") // Query by email
+                )
+
+                if (response.documents.isNotEmpty()) {
+                    val userDocument = response.documents[0]
+                    val username = userDocument.data["username"] as? String ?: "Guest"
+                    AppState.setUserName(username) // Store username in AppState
+                } else {
+                    throw Exception("User not found in the database for email: $email")
+                }
 
                 Platform.runLater {
                     val alert = Alert(AlertType.INFORMATION)
@@ -59,7 +76,7 @@ class LoginController {
             } catch (e: Exception) {
                 Platform.runLater {
                     val alert = Alert(AlertType.ERROR)
-                    alert.contentText = "Login Failed"
+                    alert.contentText = "Login Failed: ${e.message}"
                     alert.show()
                     onError(e)
                 }

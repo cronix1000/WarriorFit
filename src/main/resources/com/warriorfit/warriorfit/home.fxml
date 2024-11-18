@@ -5,41 +5,39 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="background" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../../../styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.warriorfit.warriorfit.HomeController">
    <children>
-      <BorderPane layoutX="-8.0" layoutY="-1.0" prefHeight="240.0" prefWidth="1286.0">
-         <top>
-            <Label fx:id="welcomeText" text="Welcome Ethan" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="Agency FB Bold" size="81.0" />
-               </font>
-               <padding>
-                  <Insets top="20.0" />
-               </padding>
-            </Label>
-         </top>
-         <center>
-            <Label fx:id="currentStatsText" text="Current Fitness Statistics:" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="Agency FB" size="40.0" />
-               </font>
-            </Label>
-         </center>
-      </BorderPane>
-      <ImageView fx:id="warriorLogo" fitHeight="276.0" fitWidth="369.0" layoutX="15.0" layoutY="443.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="settingsButton" layoutX="1131.0" layoutY="23.0" mnemonicParsing="false" onAction="#onSettingsButtonClick" text="Settings">
+      <Label fx:id="currentStatsText" layoutX="470.0" layoutY="109.0" text="Current Fitness Statistics">
+         <font>
+            <Font name="Agency FB" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="welcomeText" alignment="CENTER" layoutX="339.0" layoutY="1.0" prefHeight="109.0" prefWidth="603.0" text="Welcome Ethan" textAlignment="CENTER" textOverrun="CLIP">
+         <font>
+            <Font name="Agency FB Bold" size="72.0" />
+         </font>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </Label>
+      <ImageView fx:id="warriorLogo" fitHeight="238.0" fitWidth="292.0" layoutX="14.0" layoutY="468.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="startWorkoutbutton" layoutX="541.0" layoutY="647.0" mnemonicParsing="false" onAction="#onStartWorkoutButtonClick" text="Start Workout">
 
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="startWorkoutbutton" layoutX="1014.0" layoutY="74.0" mnemonicParsing="false" onAction="#onStartWorkoutButtonClick" text="Settings">
+      <Button fx:id="settingsButton" layoutX="1127.0" layoutY="29.0" mnemonicParsing="false" onAction="#onSettingsButtonClick" text="Settings">
 
-         <font>
+               <font>
             <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="backButton" layoutX="22.0" layoutY="29.0" onAction="#onBackButtonClick" prefHeight="52.0" prefWidth="108.0" text="Log out">
+         <font>
+            <Font name="Agency FB" size="25.0" />
          </font>
       </Button>
 

@@ -166,7 +166,6 @@ class SignUpController {
         )
 
         AppState.setUserId(userId)
-
         // Load exercises once at login
         AppState.loadExercises()
     }
@@ -185,7 +184,6 @@ class SignUpController {
     public lateinit var createText: Label
 
     @FXML
-
     //initialize function
     public fun initialize() {
 

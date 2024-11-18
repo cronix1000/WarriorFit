@@ -20,6 +20,7 @@ class HomeController {
     public lateinit var welcomeText: Label
     public lateinit var background: AnchorPane
     public lateinit var currentStatsText: Label
+    public lateinit var backButton: Button
 
     //imageview warriorLogo
     public lateinit var warriorLogo: ImageView
@@ -27,12 +28,18 @@ class HomeController {
     @FXML
 //initialize function
     public fun initialize() {
+
+        // Ensure the username is not null
+        val username = AppState.getUserId()
+
+        // Set the welcome message
+        welcomeText.text = "Welcome $username"
+
         //white text
         welcomeText.setStyle("-fx-text-fill: white;")
         currentStatsText.setStyle("-fx-text-fill: white;")
         settingsButton.setStyle("-fx-background-radius: 25;")
 
-        //put a settings cogwheel image on button
         //remove settingstext
         settingsButton.text = ""
         //graphic size and location 50x50
@@ -97,6 +104,33 @@ class HomeController {
             // Set the new scene on the current stage
             currentStage.scene = newScene
             currentStage.title = "Warrior Fitness - Settings"
+
+            // Optionally, you can also set a minimum or fixed size on the stage
+            currentStage.minWidth = 1280.0
+            currentStage.minHeight = 720.0
+
+            // Display the stage
+            currentStage.show()
+
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
+
+    public fun onBackButtonClick() {
+        try {
+            val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/hello-view.fxml"))
+            val root = loader.load<Parent>()
+
+            // Create a new scene with a specified width and height
+            val newScene = Scene(root, 1280.0, 720.0) // Set width to 800 and height to 600
+
+            // Get the current stage
+            val currentStage = backButton.scene.window as Stage
+
+            // Set the new scene on the current stage
+            currentStage.scene = newScene
+            currentStage.title = "Warrior Fitness"
 
             // Optionally, you can also set a minimum or fixed size on the stage
             currentStage.minWidth = 1280.0

@@ -4,6 +4,9 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 object AppState {
+
+    private var username: String = "App Guest"
+
     // User state
     private var userId: String? = null
 
@@ -13,6 +16,14 @@ object AppState {
 
     // Initialization flag
     private var isExercisesLoaded = false
+
+    fun setUserName(username: String) {
+        this.username = username
+    }
+
+    fun getUserName(): String {
+        return username
+    }
 
     fun setUserId(id: String) {
         userId = id
