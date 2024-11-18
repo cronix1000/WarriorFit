@@ -46,6 +46,9 @@ class LoginController {
                     email = email,
                     password = password
                 )
+                val userId = session.userId
+
+                AppState.setUserId(userId)
 
                 Platform.runLater {
                     val alert = Alert(AlertType.INFORMATION)

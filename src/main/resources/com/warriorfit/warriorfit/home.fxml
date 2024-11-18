@@ -36,6 +36,12 @@
             <Font size="25.0" />
          </font>
       </Button>
+      <Button fx:id="startWorkoutbutton" layoutX="1014.0" layoutY="74.0"  mnemonicParsing="false" onAction="#onStartWorkoutButtonClick" text="Settings">
+
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
 
    </children>
 </AnchorPane>

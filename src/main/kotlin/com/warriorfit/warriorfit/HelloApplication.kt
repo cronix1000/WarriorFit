@@ -97,6 +97,7 @@ class HelloApplication : Application() {
 
 suspend fun main() = coroutineScope {
     Application.launch(HelloApplication::class.java)
+    AppState.loadExercises()
     //    prepareDatabase()
         //seedDatabase()
     //    getTodos()

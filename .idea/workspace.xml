@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="login and account creation works with appwrite">
+    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="fixed merge erorrs">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/AppState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/ProfileController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/profile-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/LoginController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/LoginController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SettingsController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SettingsController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SignUpController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SignUpController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StartWorkoutController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StartWorkoutController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/start-workout-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/start-workout-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +27,14 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,7 +99,7 @@
       <workItem from="1731471693396" duration="91000" />
       <workItem from="1731471794761" duration="2555000" />
       <workItem from="1731778963971" duration="1351000" />
-      <workItem from="1731875615810" duration="6577000" />
+      <workItem from="1731875615810" duration="14572000" />
     </task>
     <task id="LOCAL-00001" summary="modified scenes to take images from the resource folder">
       <option name="closed" value="true" />
@@ -112,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731884051793</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed merge erorrs">
+      <option name="closed" value="true" />
+      <created>1731884836060</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731884836060</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +153,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="modified scenes to take images from the resource folder" />
     <MESSAGE value="login and account creation works with appwrite" />
-    <option name="LAST_COMMIT_MESSAGE" value="login and account creation works with appwrite" />
+    <MESSAGE value="fixed merge erorrs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed merge erorrs" />
   </component>
 </project>

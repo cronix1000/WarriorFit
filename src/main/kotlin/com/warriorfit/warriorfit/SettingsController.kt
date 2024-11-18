@@ -38,7 +38,7 @@ class SettingsController {
         welcomeText.setStyle("-fx-text-fill: white;")
 
         //backbutton set image to back arrow
-        backButton.graphic = ImageView(Image("C:\\Users\\mcpla\\OneDrive\\Desktop\\Year 4\\Programming Languages\\WarriorFit\\src\\main\\resources\\goBack.png"))
+        backButton.graphic = ImageView(Image("" + javaClass.getResource("/goBack.png")))
         //remove backbuttontext
         backButton.text = ""
         (backButton.graphic as ImageView)?.fitWidth = 70.0

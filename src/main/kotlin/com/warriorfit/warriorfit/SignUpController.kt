@@ -164,6 +164,11 @@ class SignUpController {
             documentId = userId,
             data = userData
         )
+
+        AppState.setUserId(userId)
+
+        // Load exercises once at login
+        AppState.loadExercises()
     }
 
 
