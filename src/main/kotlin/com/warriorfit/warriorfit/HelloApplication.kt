@@ -87,8 +87,7 @@ class HelloApplication : Application() {
     override fun start(stage: Stage) {
         val fxmlLoader = FXMLLoader(HelloApplication::class.java.getResource("hello-view.fxml"))
         val scene = Scene(fxmlLoader.load(), 1280.0, 720.0)
-        //image
-        scene.stylesheets.add("styles/style.css")
+
         stage.title = "Warrior Fitness"
         stage.scene = scene
         stage.show()

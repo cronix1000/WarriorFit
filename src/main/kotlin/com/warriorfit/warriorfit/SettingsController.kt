@@ -27,8 +27,6 @@ class SettingsController {
     @FXML
 
     public fun initialize() {
-        //background red
-        background.setStyle("-fx-background-color: red;")
 
         backButton.setStyle("-fx-background-radius: 28;")
         exitButton.setStyle("-fx-background-radius: 28;")

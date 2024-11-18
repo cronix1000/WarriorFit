@@ -182,9 +182,6 @@ class SignUpController {
     public lateinit var passwordField: TextField//used to check if password
     public lateinit var emailField: TextField //used to check if email
 
-    public lateinit var usernameText: Label
-    public lateinit var passwordText: Label
-    public lateinit var emailText: Label
     public lateinit var createText: Label
 
     @FXML
@@ -192,22 +189,7 @@ class SignUpController {
     //initialize function
     public fun initialize() {
 
-
-
-        //background red
-        background.setStyle("-fx-background-color: red;")
-        //set the text to white
-        usernameText.setStyle("-fx-text-fill: white;")
-        passwordText.setStyle("-fx-text-fill: white;")
-        emailText.setStyle("-fx-text-fill: white;")
         createText.setStyle("-fx-text-fill: white;")
-        //make background red
-        background.setStyle("-fx-background-color: red;")
-
-        //make submit button background white
-        submitButton.setStyle("-fx-background-color: white;")
-        //button smooth edges
-        submitButton.setStyle("-fx-background-radius: 28;")
 
         //backbutton set image to back arrow
         backButton.graphic = ImageView(

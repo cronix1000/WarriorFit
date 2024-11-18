@@ -75,8 +75,6 @@ class LoginController {
     public lateinit var emailTextField: TextField //used to check if username is correct
     public lateinit var passwordTextField: TextField //used to check if password is correct
 
-    public lateinit var usernameText: Label
-    public lateinit var passwordText: Label
     public lateinit var loginText: Label
 
     //backbutton
@@ -85,24 +83,17 @@ class LoginController {
     //initialize function
     public fun initialize() {
 
-        //set the text to white
-        usernameText.setStyle("-fx-text-fill: white;")
-        passwordText.setStyle("-fx-text-fill: white;")
         loginText.setStyle("-fx-text-fill: white;")
-        //make background red
-        background.setStyle("-fx-background-color: red;")
 
         //make submit button background white
         submitButton.setStyle("-fx-background-color: white;")
-        //button smooth edges
-        submitButton.setStyle("-fx-background-radius: 28;")
 
         //backbutton set image to back arrow
         backButton.graphic = ImageView(Image("" + javaClass.getResource("/goBack.png")))
         //remove backbuttontext
         backButton.text = ""
-        (backButton.graphic as ImageView)?.fitWidth = 70.0
-        (backButton.graphic as ImageView)?.fitHeight = 70.0
+        (backButton.graphic as ImageView).fitWidth = 70.0
+        (backButton.graphic as ImageView).fitHeight = 70.0
         //change graphic colour to white
         backButton.graphic.style = "-fx-fill: white;"
         //remove button background
@@ -110,15 +101,14 @@ class LoginController {
 
     }
 
-    //on submit button click
+    // on submit button click
     public fun onSubmitButtonClick() {
             login(
-                email = emailTextField.text,
-                password = passwordTextField.text,
+                email = emailTextField.text.trim(),
+                password = passwordTextField.text.trim(),
                 onSuccess = { proceedFunction() },  // Lambda for success callback
                 onError = { e -> println("Failed: ${e.message}") }  // Lambda for error callback
             )
-
     }
 
     fun proceedFunction(){

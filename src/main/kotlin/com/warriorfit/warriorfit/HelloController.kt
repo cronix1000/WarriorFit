@@ -33,15 +33,9 @@ class HelloController {
     @FXML
     //import image
     public fun initialize() {
-        //vbox background red
-        vbox.setStyle("-fx-background-color: red;")
         //white text, bold, size 20, outline black text, font is neo sans
         startText.setStyle("-fx-text-fill: white;")
         alreadyText.setStyle("-fx-text-fill: white;")
-        //button smooth edges
-        createButton.setStyle("-fx-background-radius: 28;")
-        loginButton.setStyle("-fx-background-radius: 28;")
-        exitButton.setStyle("-fx-background-radius: 28;")
         //image size
         ImageView().fitWidth = 800.0
         ImageView().fitHeight = 800.0
@@ -51,13 +45,12 @@ class HelloController {
         imageView2.image = Image("" + javaClass.getResource("/warriorImage.png"))
     }
 
-
     public fun onCreateButtonClick() {
         try {
         createButton.text = "Create Button Clicked"
 
         // Load the new FXML file temporary home file
-        val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/home.fxml"))
+        val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/create-account.fxml"))
         val root = loader.load<Parent>()
 
         // Create a new scene with a specified width and height

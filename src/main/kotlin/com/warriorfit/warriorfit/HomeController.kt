@@ -27,8 +27,6 @@ class HomeController {
     @FXML
 //initialize function
     public fun initialize() {
-        // background red
-        background.setStyle("-fx-background-color: red;")
         //white text
         welcomeText.setStyle("-fx-text-fill: white;")
         currentStatsText.setStyle("-fx-text-fill: white;")
@@ -39,8 +37,8 @@ class HomeController {
         settingsButton.text = ""
         //graphic size and location 50x50
         settingsButton.graphic = ImageView(Image("" + javaClass.getResource("/settings.png")))
-        (settingsButton.graphic as ImageView)?.fitWidth = 70.0
-        (settingsButton.graphic as ImageView)?.fitHeight = 70.0
+        (settingsButton.graphic as ImageView).fitWidth = 70.0
+        (settingsButton.graphic as ImageView).fitHeight = 70.0
         //change graphic colour to white
         settingsButton.graphic.style = "-fx-fill: white;"
         //remove button background

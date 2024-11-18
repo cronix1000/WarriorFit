@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="background" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.warriorfit.warriorfit.HomeController">
+<AnchorPane fx:id="background" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../../../styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.warriorfit.warriorfit.HomeController">
    <children>
       <BorderPane layoutX="-8.0" layoutY="-1.0" prefHeight="240.0" prefWidth="1286.0">
          <top>
@@ -36,7 +36,7 @@
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="startWorkoutbutton" layoutX="1014.0" layoutY="74.0"  mnemonicParsing="false" onAction="#onStartWorkoutButtonClick" text="Settings">
+      <Button fx:id="startWorkoutbutton" layoutX="1014.0" layoutY="74.0" mnemonicParsing="false" onAction="#onStartWorkoutButtonClick" text="Settings">
 
          <font>
             <Font size="25.0" />
