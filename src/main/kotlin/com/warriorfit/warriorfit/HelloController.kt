@@ -78,7 +78,7 @@ class HelloController {
 
         // Set the new scene on the current stage
         currentStage.scene = newScene
-        currentStage.title = "Warrior Fitness - Home"
+        currentStage.title = "Warrior Fitness - Create Account"
 
         // Optionally, you can also set a minimum or fixed size on the stage
         currentStage.minWidth = 1280.0
