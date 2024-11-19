@@ -33,7 +33,7 @@ object AppState {
 
     public var usersCollection: Collection? = null
 
-
+    private  var userName: String = ""
     // User state
     private var userId: String = ""
 
@@ -43,6 +43,14 @@ object AppState {
 
     // Initialization flag
     private var isExercisesLoaded = false
+
+    fun setUserName(name: String){
+        userName = name
+    }
+
+    fun getUserName(): String{
+        return userName
+    }
 
     fun setUserId(id: String) {
         userId = id
@@ -113,6 +121,7 @@ object AppState {
 
 
 
+
                     Triple(statsId, muscleGroupsId, workoutsId)
                 } catch (e: Exception) {
                     println("Error fetching fitness data: ${e.message}")
@@ -123,29 +132,38 @@ object AppState {
 
         // Update user's stats
         suspend fun updateUserStats(
-            strength: Int,
-            endurance: Int,
-            flexibility: Int,
-            speed: Int,
-            balance: Int
+            strength: Double,
+            endurance: Double,
+            flexibility: Double,
+            speed: Double,
+            balance: Double
         ) {
             withContext(Dispatchers.IO) {
                 try {
                     val userData = getCurrentUserData() ?: throw Exception("User data not found")
-                    val statsId = userData.data["stats_id"] as? String ?: throw Exception("Stats ID not found")
+                    val stats = userData.data["stats_id"] as? Map<String, Any>
+                    val statsId = stats?.get("stats_id") as? String
+                        ?: throw Exception("Stats ID not found")
 
-                    databases.updateDocument(
-                        databaseId = DATABASE_ID,
-                        collectionId = STATS_COLLECTION_ID,
-                        documentId = statsId,
-                        data = mapOf(
-                            "strength" to strength,
-                            "endurance" to endurance,
-                            "flexibility" to flexibility,
-                            "speed" to speed,
-                            "balance" to balance
+
+                    try {
+                        val response = databases.updateDocument(
+                            databaseId = DATABASE_ID,
+                            collectionId = STATS_COLLECTION_ID,
+                            documentId = statsId,
+                            data = mapOf(
+                                "strength" to strength,
+                                "endurance" to endurance,
+                                "flexibility" to flexibility,
+                                "speed" to speed,
+                                "balance" to balance
+                            )
                         )
-                    )
+                        println("Update successful: $response")
+                    } catch (e: Exception) {
+                        println("Update failed: ${e.message}")
+                        e.printStackTrace()
+                    }
                 } catch (e: Exception) {
                     println("Error updating user stats: ${e.message}")
                 }

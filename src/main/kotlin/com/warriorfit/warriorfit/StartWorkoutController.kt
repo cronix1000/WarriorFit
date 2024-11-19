@@ -2,6 +2,7 @@ package com.warriorfit.warriorfit
 
 
 import com.google.gson.Gson
+import io.appwrite.ID
 import javafx.application.Platform
 import javafx.collections.FXCollections
 import javafx.fxml.FXML
@@ -20,9 +21,11 @@ import javafx.scene.control.Button
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.stage.Stage
+import kotlinx.coroutines.runBlocking
 import java.io.IOException
 import java.net.URL
 import java.util.*
+import kotlin.math.round
 
 
 @Serializable
@@ -80,6 +83,15 @@ class StartWorkoutController : Initializable {
     //details
     public lateinit var detailsLabel: Label
 
+
+    private var stats = listOf<Pair<String, Any>>(
+        "Chest" to 0,
+        "Shoulders" to 0,
+        "Legs" to 0,
+        "Back" to 0,
+        "Triceps" to 0,
+        "Biceps" to 0
+    )
 
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
@@ -204,33 +216,192 @@ class StartWorkoutController : Initializable {
             return
         }
 
+      //  println(selectedExercises.map { it.name }.toList())
+
         // Create workout data
-        val workoutId = UUID.randomUUID().toString().substring(0, 14)
+        val workoutId = ID.unique().substring(0, 20)
         val workoutData = mapOf(
             "workouts_id" to workoutId,
             "date" to Date(),
-            "exercises" to selectedExercises.map { it.id },
+            "duration" to 5,
+            "exercises" to selectedExercises.map { it.name }.toList(),
             "totalXPEarned" to totalXpLabel.text,
             "notes" to workoutNotesArea.text
         )
 
         try {
-            // TODO: Implement your database save logic here
+            runBlocking {
+                databases.createDocument(
+                    databaseId = "6732731c0015a0af0d1e",
+                    collectionId = "6736dc8f0019010e89b3", // Replace with actual collection ID
+                    documentId = workoutId,
+                    data = workoutData
+                )
 
-            // Clear the form after successful save
-            selectedExercises.clear()
-            selectedExercisesList.items.clear()
-            workoutNotesArea.text = ""
-            updateTotalXP()
+                val user_data = AppState.getCurrentUserData()
 
-            val alert =Alert(Alert.AlertType.INFORMATION)
-            alert.contentText = "Workout saved successfully!"
-            alert.show()
+
+                try {
+
+
+                    user_data?.let { userData ->
+                        val currentXP = userData.data["currentXP"] as? Long ?: 0
+                        println( userData.data["currentXP"] as Long)
+
+
+                        val workoutXP = totalXpLabel.text.toInt()
+                        println( workoutXP)
+                        val newTotalXP = currentXP + workoutXP
+                        println(newTotalXP)
+                        // Calculate level (assuming 100 XP per level)
+                        val newLevel = (newTotalXP / 100) + 1
+
+                        databases.updateDocument(
+                            databaseId = "6732731c0015a0af0d1e",
+                            collectionId = "6736dacb0021a324feed",
+                            documentId = AppState.getUserId(),
+                            data = mapOf(
+                                "currentXP" to newTotalXP,
+                                "level" to newLevel
+                            )
+                        )
+                    }
+                }
+                catch (e: Exception) {
+                    val alert = Alert(Alert.AlertType.ERROR)
+                    alert.contentText = "Error saving to user" + e.message
+                    alert.show()
+                }
+
+                val (userStats, _) = AppState.getUserFitnessData()
+                val stats = userStats?.toList() ?: stats
+                val personalStats = listOf(
+                    ("Strength" to stats.find { it.first == "strength" }!!.second),
+                    ("Endurance" to stats.find { it.first == "endurance" }!!.second),
+                    ("Flexibility" to stats.find { it.first == "flexibility" }!!.second),
+                    ("Speed" to stats.find { it.first == "speed" }!!.second),
+                    ("Balance" to stats.find { it.first == "balance" }!!.second)
+                )
+
+                val statsBack = calculateStats(
+                    selectedExercises,
+                    personalStats
+                )
+
+
+
+                val currentStatsMap = statsBack!!.associate {
+                    it.first.lowercase() to it.second
+                }
+
+                var strength = currentStatsMap["strength"] as? Double ?: 0.0
+                var endurance = currentStatsMap["endurance"] as? Double ?: 0.0
+                var flexibility = currentStatsMap["flexibility"] as? Double ?: 0.0
+                var speed = currentStatsMap["speed"] as? Double ?: 0.0
+                var balance = currentStatsMap["balance"] as? Double ?: 0.0
+
+                AppState.updateUserStats(strength, endurance, flexibility, speed, balance)
+
+                // Clear the form after successful save
+                selectedExercises.clear()
+                selectedExercisesList.items.clear()
+                workoutNotesArea.text = ""
+                updateTotalXP()
+
+                val alert = Alert(Alert.AlertType.INFORMATION)
+                alert.contentText = "Workout saved successfully!"
+                alert.show()
+            }
+
+
         } catch (e: Exception) {
             val alert = Alert(Alert.AlertType.ERROR)
-            alert.contentText = e.message
+            alert.contentText = "Error saving workout" + e.message
             alert.show()
         }
+    }
+
+    fun calculateStats(
+        workoutData: List<Exercise>,
+        currentStats: List<Pair<String, Any>>
+    ): List<Pair<String, Any>>? {
+//        try {
+
+        // Increment factor for scaling
+        val incrementFactor = 0.004
+
+        // Initialize muscle group stats
+        val muscleGroups = mutableMapOf<String, Double>()
+
+
+        val currentStatsMap = currentStats.associate {
+            it.first.lowercase() to it.second
+        }
+
+        // Initialize user stats with lowercase keys
+        var strength = currentStatsMap["strength"] as? Double ?: 0.0
+        var endurance = currentStatsMap["endurance"] as? Double ?: 0.0
+        var flexibility = currentStatsMap["flexibility"] as? Double ?: 0.0
+        var speed = currentStatsMap["speed"] as? Double ?: 0.0
+        var balance = currentStatsMap["balance"] as? Double ?: 0.0
+
+
+        workoutData.forEach { excersise ->
+
+                val mechanic = excersise.mechanic as? String ?: "other"
+                val xp = (excersise.xp as? String)?.toDoubleOrNull() ?: 0.0
+
+                // Increment user stats based on mechanic
+                when (mechanic.lowercase()) {
+                    "compound" -> {
+                        strength += xp * incrementFactor * 0.4
+                        endurance += xp * incrementFactor * 0.3
+                        balance += xp * incrementFactor * 0.3
+                    }
+
+                    "isolation" -> {
+                        strength += xp * incrementFactor * 0.5
+                        flexibility += xp * incrementFactor * 0.3
+                        speed += xp * incrementFactor * 0.2
+                    }
+
+                    "static" -> {
+                        balance += xp * incrementFactor * 0.6
+                        flexibility += xp * incrementFactor * 0.4
+                    }
+
+                    else -> {
+                        endurance += xp * incrementFactor * 0.4
+                        speed += xp * incrementFactor * 0.3
+                        strength += xp * incrementFactor * 0.3
+                    }
+                }
+
+                // Increment muscle group stats
+                val primaryMuscles = excersise.primaryMuscles as? List<String> ?: emptyList()
+                primaryMuscles.forEach { muscle ->
+                    muscleGroups[muscle] = (muscleGroups[muscle] ?: 0.0) + (xp * incrementFactor)
+                }
+
+        }
+        val finalStats = listOf(
+            "strength" to round(strength * 1000) / 1000,
+            "endurance" to round(endurance * 1000) / 1000,
+            "flexibility" to round(flexibility * 1000) / 1000,
+            "speed" to round(speed * 1000) / 1000,
+            "balance" to round(balance * 1000) / 1000,
+            "muscleGroups" to muscleGroups.mapValues { round(it.value * 1000) / 1000 }
+        )
+        println(finalStats)
+        // Return updated stats
+        return finalStats
+
+//    } catch (e: Exception) {
+//        val alert = Alert(Alert.AlertType.ERROR)
+//        alert.contentText = "Error calculating stats" + e.message
+//        alert.show()
+//        return  null
+//    }
     }
 
 }

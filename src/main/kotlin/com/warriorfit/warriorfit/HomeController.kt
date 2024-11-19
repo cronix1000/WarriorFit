@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView
 import javafx.scene.layout.AnchorPane
 import javafx.scene.layout.VBox
 import javafx.stage.Stage
+import kotlinx.coroutines.runBlocking
 import java.io.IOException
 
 class HomeController {
@@ -68,6 +69,17 @@ class HomeController {
             Image("" + javaClass.getResource("/warriorImage.png"))
 
         //get the current username for the welcome text
+        var name = ""
+        var level = ""
+        runBlocking {
+            val user = AppState.getCurrentUserData()
+            level = user!!.data["level"].toString()
+            name = AppState.getUserName()
+
+            welcomeText.text = "Welcome" + name
+            levelLabel.text = level
+
+        }
 
         //get the current level for the level text
 
