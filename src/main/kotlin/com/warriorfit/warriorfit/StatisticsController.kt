@@ -1,93 +1,170 @@
 package com.warriorfit.warriorfit
 
+import io.appwrite.models.Collection
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
 import javafx.scene.Parent
 import javafx.scene.Scene
 import javafx.scene.control.Button
 import javafx.scene.control.Label
-import javafx.scene.control.ListView
-import javafx.scene.image.Image
-import javafx.scene.image.ImageView
-import javafx.scene.layout.AnchorPane
-import javafx.scene.layout.VBox
+import javafx.scene.layout.Pane
+import javafx.scene.paint.Color
+import javafx.scene.shape.ClosePath
+import javafx.scene.shape.LineTo
+import javafx.scene.shape.MoveTo
+import javafx.scene.shape.Path
+import javafx.scene.text.Text
 import javafx.stage.Stage
+import kotlinx.coroutines.runBlocking
 import java.io.IOException
-import kotlin.system.exitProcess
+import kotlin.math.cos
+import kotlin.math.sin
 
 class StatisticsController {
-@FXML
-public lateinit var backButton: Button
-//stats label/ muscles label
-public lateinit var statsLabel: Label
-public lateinit var musclesLabel: Label
-public lateinit var background: AnchorPane
+        @FXML
+        public lateinit var backButton: Button
 
-//label for statistics
-public lateinit var statisticsLabel: Label
+        @FXML private lateinit var spiderChart: Pane
+        @FXML private lateinit var avgSessionValue: Label
+        @FXML private lateinit var trainingTimeValue: Label
 
-//list view muscles/stats
-public lateinit var statsListView: ListView<String>
-public lateinit var musclesListView: ListView<String>
+        var statsCollection : Collection? = null
+        var muscleGroupCollection : Collection? = null
+        var usersCollection : Collection? = null
 
-@FXML
 
-//init
-    public fun initialize() {
-    //background red
-    background.setStyle("-fx-background-color: red;")
 
-    //make buttons background white
-    backButton.setStyle("-fx-background-color: white;")
-
-    backButton.setStyle("-fx-background-radius: 28;")
-
-    //set text to white
-    statsLabel.setStyle("-fx-text-fill: white;")
-    musclesLabel.setStyle("-fx-text-fill: white;")
-    statisticsLabel.setStyle("-fx-text-fill: white;")
-
-    //backbutton set image to back arrow
-    backButton.graphic = ImageView(
-        Image(
-            "" + javaClass.getResource
-                ("/goBack.png")
+        private var stats = listOf<Pair<String, Any>>(
+            "Chest" to 0,
+            "Shoulders" to 0,
+            "Legs" to 0,
+            "Back" to 0,
+            "Triceps" to 0,
+            "Biceps" to 0
         )
-    )
-    //remove backbuttontext
-    backButton.text = ""
-    (backButton.graphic as ImageView)?.fitWidth = 70.0
 
-    (backButton.graphic as ImageView)?.fitHeight = 70.0
-    //change graphic colour to white
-    backButton.graphic.style = "-fx-fill: white;"
-    //remove button background
-    backButton.setStyle("-fx-background-color: transparent;")
+        @FXML
+        fun initialize() {
+            runBlocking {
+                val (userStats, _) = AppState.getUserFitnessData()
+                stats = userStats?.toList() ?: stats
+                val personalStats = listOf<Pair<String, Any>>(
+                    ("Strength" to stats.find { it.first == "strength" }!!.second),
+                    ("Endurance" to stats.find { it.first == "endurance" }!!.second),
+                    ("Flexibility" to stats.find { it.first == "flexibility" }!!.second),
+                    ("Speed" to stats.find { it.first == "speed" }!!.second),
+                    ("Balance" to stats.find { it.first == "balance" }!!.second)
+                )
+                stats = personalStats
+                drawSpiderChart()
+            }
 
-    //list view
-    //add items from db for stats
-    statsListView.items.addAll("Strength:", "Endurance:", "Flexibility:", "Speed:", "Balance:")
-    //text size 20
-    statsListView.setStyle("-fx-font-size: 20;")
-    //add items from db for muscles
-    musclesListView.items.addAll("Chest:", "Back:", "Legs:", "Shoulders:", "Core:")
-    //text size 20
-    musclesListView.setStyle("-fx-font-size: 20;")
 
-}
-    //back button
-    public fun onBackButtonClick() {
-    try {
-        backButton.text = "Back Button Clicked"
-        //go to previous scene
-        // Load the new FXML file temporary home file
-        val loader = FXMLLoader(javaClass.getResource
-            ("/com/warriorfit/warriorfit/home.fxml"))
-        val root = loader.load<Parent>()
-        val stage = backButton.scene.window as Stage
-        stage.scene = Scene(root, 1280.0, 720.0)
-    } catch (e: IOException) {
-        e.printStackTrace()
+
+            drawSpiderChart()
+        }
+
+        private fun drawSpiderChart() {
+            val centerX = spiderChart.width / 2
+            val centerY = spiderChart.height / 2
+            val radius = minOf(centerX, centerY) * 0.8
+
+            // Draw background web
+            val backgroundWeb = createWebShape(centerX, centerY, radius, Color.web("#333333"))
+
+            // Draw data polygon
+            val dataPolygon = createDataPolygon(centerX, centerY, radius)
+
+            // Add labels
+            val labels = createAxisLabels(centerX, centerY, radius)
+
+            spiderChart.children.addAll(backgroundWeb, dataPolygon)
+            spiderChart.children.addAll(labels)
+
+            // Handle resize events
+            spiderChart.widthProperty().addListener { _, _, _ -> updateChart() }
+            spiderChart.heightProperty().addListener { _, _, _ -> updateChart() }
+        }
+
+        private fun createWebShape(centerX: Double, centerY: Double, radius: Double, color: Color): Path {
+            val path = Path()
+            path.stroke = color
+            path.fill = Color.TRANSPARENT
+            path.strokeWidth = 1.0
+
+            for (i in 0..5) {
+                val angle = 2 * Math.PI * i / 6 - Math.PI / 2
+                val x = centerX + radius * cos(angle)
+                val y = centerY + radius * sin(angle)
+
+                if (i == 0) {
+                    path.elements.add(MoveTo(x, y))
+                } else {
+                    path.elements.add(LineTo(x, y))
+                }
+            }
+            path.elements.add(ClosePath())
+
+            return path
+        }
+
+        private fun createDataPolygon(centerX: Double, centerY: Double, radius: Double): Path {
+            val path = Path()
+            path.fill = Color.web("#007AFF", 0.3)
+            path.stroke = Color.web("#007AFF")
+            path.strokeWidth = 2.0
+
+            stats.forEachIndexed { index, stat ->
+                val angle = 2 * Math.PI * index / 6 - Math.PI / 2
+
+                val value = stat.second as Double
+                val x = centerX + radius * value * cos(angle)
+                val y = centerY + radius * value * sin(angle)
+
+                if (index == 0) {
+                    path.elements.add(MoveTo(x, y))
+                } else {
+                    path.elements.add(LineTo(x, y))
+                }
+            }
+            path.elements.add(ClosePath())
+
+            return path
+        }
+
+        private fun createAxisLabels(centerX: Double, centerY: Double, radius: Double): List<Text> {
+            return stats.mapIndexed { index, stat ->
+                val angle = 2 * Math.PI * index / 6 - Math.PI / 2
+                val labelRadius = radius + 20
+                val x = centerX + labelRadius * cos(angle)
+                val y = centerY + labelRadius * sin(angle)
+
+                Text(x, y, stat.first).apply {
+                    fill = Color.WHITE
+                    style = "-fx-font-size: 12px; -fx-font-weight: bold;"
+                }
+            }
+        }
+
+    private fun updateChart() {
+        spiderChart.children.clear()
+        drawSpiderChart()
     }
+
+    public fun onBackButtonClick() {
+        try {
+            backButton.text = "Back Button Clicked"
+            //go to previous scene
+            // Load the new FXML file temporary home file
+            val loader = FXMLLoader(
+                javaClass.getResource
+                    ("/com/warriorfit/warriorfit/home.fxml")
+            )
+            val root = loader.load<Parent>()
+            val stage = backButton.scene.window as Stage
+            stage.scene = Scene(root, 1280.0, 720.0)
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
     }
 }

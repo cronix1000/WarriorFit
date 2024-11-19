@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="Updated Start Workout Page">
+    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="wokrouts loaded">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/AppState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/AppState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StatisticsController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StatisticsController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/statistics.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/statistics.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +63,7 @@
     &quot;Gradle.WarriorFit.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.HelloApplicationKt.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ethan&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -89,6 +94,7 @@
       <workItem from="1731471794761" duration="2555000" />
       <workItem from="1731778963971" duration="1351000" />
       <workItem from="1731875615810" duration="14572000" />
+      <workItem from="1732029755730" duration="1680000" />
     </task>
     <task id="LOCAL-00001" summary="modified scenes to take images from the resource folder">
       <option name="closed" value="true" />
@@ -130,23 +136,7 @@
       <option name="project" value="LOCAL" />
       <updated>1731983070578</updated>
     </task>
-    <task id="LOCAL-00006" summary="Added button for Statistics page. Level text now on Home Page. Statistics page for stats and muscles.">
-      <option name="closed" value="true" />
-      <created>1731985074085</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1731985074085</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Updated Start Workout Page">
-      <option name="closed" value="true" />
-      <created>1732032807108</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1732032807108</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,8 +158,6 @@
     <MESSAGE value="login and account creation works with appwrite" />
     <MESSAGE value="fixed merge erorrs" />
     <MESSAGE value="Fixed create account button, and you can now make an account. Added Workout button. Added CSS to start workout page." />
-    <MESSAGE value="Added button for Statistics page. Level text now on Home Page. Statistics page for stats and muscles." />
-    <MESSAGE value="Updated Start Workout Page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Start Workout Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed create account button, and you can now make an account. Added Workout button. Added CSS to start workout page." />
   </component>
 </project>
