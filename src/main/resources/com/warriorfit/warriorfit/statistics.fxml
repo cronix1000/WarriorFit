@@ -3,76 +3,82 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.shape.*?>
 
-
-<AnchorPane fx:id="background" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.warriorfit.warriorfit.StatisticsController">
+<AnchorPane fx:id="background2" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.warriorfit.warriorfit.StatisticsController">
    <children>
-      <VBox>
+      <VBox fx:id="background" layoutX="391.0" layoutY="121.0" prefHeight="563.0" prefWidth="558.0">
 
          <padding>
-            <Insets top="20" right="20" bottom="20" left="20"/>
+            <Insets bottom="20" left="20" right="20" top="20" />
          </padding>
 
-         <!-- Header -->
-         <HBox spacing="20" alignment="CENTER_LEFT">
-            <Label text="Exercise"
-                   style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
-         </HBox>
-
          <!-- Tabs for Today/Weight Training -->
-         <HBox spacing="10">
-            <Button fx:id="todayButton" text="Today"
-                    style="-fx-background-color: transparent; -fx-text-fill: #007AFF;"/>
-            <Button fx:id="weightTrainingButton" text="Weight Training"
-                    style="-fx-background-color: transparent; -fx-text-fill: #666666;"/>
+         <HBox prefHeight="26.0" prefWidth="264.0" spacing="10">
+            <Button fx:id="todayButton" style="-fx-background-color: transparent; -fx-text-fill: #007AFF;" text="Today">
+               <font>
+                  <Font name="Agency FB Bold" size="27.0" />
+               </font></Button>
+            <Button fx:id="weightTrainingButton" style="-fx-background-color: transparent; -fx-text-fill: #white;" text="Weight Training" textFill="#fafafa">
+               <font>
+                  <Font name="Agency FB Bold" size="27.0" />
+               </font></Button>
          </HBox>
 
          <!-- Spider Chart Container -->
-         <StackPane fx:id="spiderChartContainer" prefHeight="300">
-            <Pane fx:id="spiderChart" />
+         <StackPane fx:id="spiderChartContainer" prefHeight="351.0" prefWidth="518.0">
+            <Pane fx:id="spiderChart" prefHeight="467.0" prefWidth="518.0" />
          </StackPane>
 
          <!-- Legend -->
-         <HBox spacing="20" alignment="CENTER_LEFT">
-            <HBox spacing="5" alignment="CENTER_LEFT">
-               <Rectangle width="10" height="10" fill="#007AFF"/>
-               <Label text="Progress" style="-fx-text-fill: white;"/>
+         <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="518.0" spacing="20">
+            <HBox alignment="CENTER_LEFT" spacing="5">
+               <Rectangle fill="#007AFF" height="10" width="10" />
+               <Label style="-fx-text-fill: white; -fx-font-size: 20px;" text="Progress" />
             </HBox>
-            <HBox spacing="5" alignment="CENTER_LEFT">
-               <Rectangle width="10" height="10" fill="#333333"/>
-               <Label text="Goal" style="-fx-text-fill: white;"/>
+            <HBox alignment="CENTER_LEFT" spacing="5">
+               <Rectangle fill="#333333" height="10" width="10" />
+               <Label style="-fx-text-fill: white; -fx-font-size: 20px;" text="Goal" />
             </HBox>
          </HBox>
 
          <!-- Stats Section -->
-         <VBox spacing="10">
-            <HBox spacing="20" alignment="CENTER_LEFT">
-               <Label text="Avg. Lifting Session"
-                      style="-fx-text-fill: #888888; -fx-font-size: 14px;"/>
-               <Label fx:id="avgSessionValue" text="2hrs"
-                      style="-fx-text-fill: #007AFF; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+         <VBox prefHeight="77.0" prefWidth="518.0" spacing="10">
+            <HBox alignment="CENTER_LEFT" spacing="20">
+               <Label style="-fx-text-fill: white; -fx-font-size: 20px;" text="Avg. Lifting Session" textFill="WHITE">
+                  <font>
+                     <Font name="Agency FB Bold" size="22.0" />
+                  </font></Label>
+               <Label fx:id="avgSessionValue" style="-fx-text-fill: #007AFF; -fx-font-size: 20px; -fx-font-weight: bold;" text="2hrs">
+                  <font>
+                     <Font size="22.0" />
+                  </font></Label>
             </HBox>
 
-            <HBox spacing="20" alignment="CENTER_LEFT">
-               <Label text="Training Time"
-                      style="-fx-text-fill: #888888; -fx-font-size: 14px;"/>
-               <Label fx:id="trainingTimeValue" text="65%"
-                      style="-fx-text-fill: #007AFF; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <HBox alignment="CENTER_LEFT" spacing="20">
+               <Label style="-fx-text-fill: white; -fx-font-size: 20px;" text="Training Time" textFill="WHITE">
+                  <font>
+                     <Font name="Agency FB" size="22.0" />
+                  </font></Label>
+               <Label fx:id="trainingTimeValue" style="-fx-text-fill: #007AFF; -fx-font-size: 20px; -fx-font-weight: bold;" text="65%" />
             </HBox>
          </VBox>
 
       </VBox>
       <Button fx:id="backButton" layoutX="20.0" layoutY="20.0" onAction="#onBackButtonClick" prefHeight="42.0" prefWidth="114.0" style="-fx-font-weight: bold; -fx-font-size: 14px;" text="Back" />
+      <Label fx:id="currentStatsLabel" layoutX="468.0" layoutY="-2.0" text="Current Statistics">
+         <font>
+            <Font name="Agency FB Bold" size="63.0" />
+         </font>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </Label>
    </children>
 </AnchorPane>

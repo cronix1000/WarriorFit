@@ -67,6 +67,8 @@ class StartWorkoutController : Initializable {
     @FXML
     //background
     public lateinit var background: AnchorPane
+    //Vbox
+
     //back button
     public lateinit var backButton: Button
     //labels
