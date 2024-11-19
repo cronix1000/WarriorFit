@@ -80,6 +80,11 @@ class StartWorkoutController : Initializable {
     //details
     public lateinit var detailsLabel: Label
 
+    //button
+    public lateinit var addButton: Button
+    public lateinit var removeButton: Button
+    //startButton
+    public lateinit var startButton: Button
 
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
@@ -111,6 +116,16 @@ class StartWorkoutController : Initializable {
 
 
         exercises = AppState.getExercises()
+
+        //buttons
+        addButton.setStyle("-fx-background-color: white;")
+        removeButton.setStyle("-fx-background-color: white;")
+        //button smooth edges
+        addButton.setStyle("-fx-background-radius: 28;")
+        removeButton.setStyle("-fx-background-radius: 28;")
+        //start button
+        startButton.setStyle("-fx-background-color: white;")
+        startButton.setStyle("-fx-background-radius: 28;")
 
 
         // Set up the available exercises list
@@ -194,6 +209,7 @@ class StartWorkoutController : Initializable {
         val totalXP = selectedExercises.sumOf { it.xp.toInt() }
         totalXpLabel.text = totalXP.toString()
     }
+
     @FXML
     fun handleStartWorkout() {
         if (selectedExercises.isEmpty()) {

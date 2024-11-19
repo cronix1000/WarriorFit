@@ -38,7 +38,15 @@
             </Label>
          </left>
       </BorderPane>
-      <BorderPane prefHeight="157.0" prefWidth="1296.0" />
+      <BorderPane layoutX="39.0" prefHeight="158.0" prefWidth="1257.0">
+         <left>
+            <Button fx:id="backButton" onAction="#onBackButtonClick" prefHeight="88.0" prefWidth="202.0" text="Go Back" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Agency FB" size="39.0" />
+               </font>
+            </Button>
+         </left>
+      </BorderPane>
       <BorderPane layoutY="293.0" prefHeight="120.0" prefWidth="1296.0">
          <left>
             <Label fx:id="passwordText" prefHeight="138.0" prefWidth="430.0" text="Password:" BorderPane.alignment="CENTER">
@@ -103,11 +111,6 @@
             <Insets left="200.0" />
          </padding>
       </Label>
-      <Button fx:id="backButton" layoutX="50.0" layoutY="49.0" onAction="#onBackButtonClick" prefHeight="88.0" prefWidth="202.0" text="Go Back">
-         <font>
-            <Font name="Agency FB" size="39.0" />
-         </font>
-      </Button>
       <Button fx:id="submitButton" layoutX="543.0" layoutY="587.0" onAction="#onSubmitButtonClick" prefHeight="60.0" prefWidth="249.0" text="Submit">
          <font>
             <Font name="Agency FB" size="50.0" />

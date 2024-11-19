@@ -14,7 +14,7 @@
     <children>
       <BorderPane layoutX="-1.0" layoutY="11.0" prefHeight="54.0" prefWidth="1334.0">
          <center>
-            <Label fx:id="workoutLabel" style="-fx-font-weight: bold" text="Your Workout" BorderPane.alignment="CENTER">
+            <Label fx:id="workoutLabel" style="-fx-font-weight: bold" text="Select Workout" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Agency FB Bold" size="44.0" />
                </font>
@@ -31,7 +31,7 @@
                   </font></Label>
             <ListView fx:id="availableExercisesList" VBox.vgrow="ALWAYS" />
             <HBox alignment="CENTER" spacing="10">
-                <Button onAction="#handleAddExercise" text="Add Exercise">
+                <Button fx:id="addButton" onAction="#handleAddExercise" text="Add Exercise">
                      <font>
                         <Font name="Agency FB" size="18.0" />
                      </font></Button>
@@ -46,7 +46,7 @@
                   </font></Label>
             <ListView fx:id="selectedExercisesList" VBox.vgrow="ALWAYS" />
             <HBox alignment="CENTER" spacing="10">
-                <Button onAction="#handleRemoveExercise" text="Remove Exercise">
+                <Button fx:id="removeButton" onAction="#handleRemoveExercise" text="Remove Exercise">
                      <font>
                         <Font name="Agency FB" size="18.0" />
                      </font></Button>
@@ -64,7 +64,7 @@
     </VBox>
 
     <!-- Workout Summary -->
-    <VBox prefHeight="93.0" prefWidth="818.0" spacing="5">
+    <VBox prefHeight="244.0" prefWidth="814.0" spacing="5">
         <Label fx:id="summaryLabel" style="-fx-font-weight: bold" text="Workout Summary">
                <font>
                   <Font name="Agency FB" size="22.0" />
@@ -79,14 +79,14 @@
                      <Font name="Agency FB" size="15.0" />
                   </font></Label>
         </HBox>
-        <TextArea fx:id="workoutNotesArea" prefRowCount="3" promptText="Add workout notes..." />
+        <TextArea fx:id="workoutNotesArea" prefHeight="0.0" prefRowCount="3" prefWidth="814.0" promptText="Add workout notes..." />
     </VBox>
 
     <!-- Start Workout Button -->
     <HBox alignment="CENTER" prefHeight="161.0" prefWidth="814.0" spacing="10">
-        <Button fx:id="startButton" onAction="#handleStartWorkout" prefHeight="65.0" prefWidth="136.0" style="-fx-font-weight: bold; -fx-font-size: 14px;" text="Start Workout">
+        <Button fx:id="startButton" onAction="#handleStartWorkout" prefHeight="31.0" prefWidth="179.0" style="-fx-font-weight: bold; -fx-font-size: 14px;" text="Start Workout">
                <font>
-                  <Font name="Agency FB" size="12.0" />
+                  <Font name="Agency FB" size="20.0" />
                </font></Button>
     </HBox>
 

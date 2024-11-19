@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="Fixed create account button, and you can now make an account. Added Workout button. Added CSS to start workout page.">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StatisticsController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/statistics.fxml" afterDir="false" />
+    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="Added button for Statistics page. Level text now on Home Page. Statistics page for stats and muscles.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StartWorkoutController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StartWorkoutController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/create-account.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/create-account.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/start-workout-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/start-workout-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731983070578</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added button for Statistics page. Level text now on Home Page. Statistics page for stats and muscles.">
+      <option name="closed" value="true" />
+      <created>1731985074085</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731985074085</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +163,7 @@
     <MESSAGE value="login and account creation works with appwrite" />
     <MESSAGE value="fixed merge erorrs" />
     <MESSAGE value="Fixed create account button, and you can now make an account. Added Workout button. Added CSS to start workout page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed create account button, and you can now make an account. Added Workout button. Added CSS to start workout page." />
+    <MESSAGE value="Added button for Statistics page. Level text now on Home Page. Statistics page for stats and muscles." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added button for Statistics page. Level text now on Home Page. Statistics page for stats and muscles." />
   </component>
 </project>
