@@ -76,13 +76,19 @@ class HomeController {
             level = user!!.data["level"].toString()
             name = AppState.getUserName() //not working
 
-            welcomeText.text = "Welcome" + name
-            levelLabel.text = "Current Level: "+level
+            levelLabel.text = "Current Level: " + level
 
+            //if level is 1 then Welcome Beginner
+            //level is 0
+            welcomeText.text = when (level) {
+                "0", "1" -> "Welcome Beginner"
+                "2" -> "Welcome Intermediate"
+                "3" -> "Welcome Advanced"
+                "4" -> "Welcome Expert"
+                "5" -> "Welcome Master"
+                else -> "Welcome Beginner" // Default case
+            }
         }
-
-        //get the current level for the level text
-
     }
 
     public fun onStatisticsButtonClick() {

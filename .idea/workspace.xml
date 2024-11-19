@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="data loading and graph wokring">
+    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="Everything is Working. Statistics and Adding workouts reflect XP and Level. Thanks Idan :D">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StatisticsController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StatisticsController.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731983070578</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Everything is Working. Statistics and Adding workouts reflect XP and Level. Thanks Idan :D">
+      <option name="closed" value="true" />
+      <created>1732050880405</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732050880405</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +163,8 @@
     <MESSAGE value="fixed merge erorrs" />
     <MESSAGE value="Fixed create account button, and you can now make an account. Added Workout button. Added CSS to start workout page." />
     <MESSAGE value="data loading and graph wokring" />
-    <option name="LAST_COMMIT_MESSAGE" value="data loading and graph wokring" />
+    <MESSAGE value="Everything is Working. Statistics and Adding workouts reflect XP and Level. Thanks Idan :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="Everything is Working. Statistics and Adding workouts reflect XP and Level. Thanks Idan :D" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
