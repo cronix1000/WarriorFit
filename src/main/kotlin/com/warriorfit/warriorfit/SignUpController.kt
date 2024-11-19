@@ -95,11 +95,11 @@ class SignUpController {
         val statsId = ID.unique().substring(0, 14)
         val statsData = mapOf(
             "stats_id" to statsId,
-            "strength" to 0,
-            "endurance" to 0,
-            "flexibility" to 0,
-            "speed" to 0,
-            "balance" to 0
+            "strength" to 0.000001,
+            "endurance" to 0.000001,
+            "flexibility" to 0.000001,
+            "speed" to 0.000001,
+            "balance" to 0.000001
         )
 
         databases.createDocument(
