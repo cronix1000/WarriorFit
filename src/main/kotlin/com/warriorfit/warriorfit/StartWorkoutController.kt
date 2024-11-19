@@ -5,13 +5,22 @@ import com.google.gson.Gson
 import javafx.application.Platform
 import javafx.collections.FXCollections
 import javafx.fxml.FXML
+import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
+import javafx.scene.Parent
+import javafx.scene.Scene
 import javafx.scene.control.Alert
 import javafx.scene.control.Alert.AlertType
 import javafx.scene.control.Label
 import javafx.scene.control.ListView
 import javafx.scene.control.TextArea
+import javafx.scene.layout.AnchorPane
 import kotlinx.serialization.Serializable
+import javafx.scene.control.Button
+import javafx.scene.image.Image
+import javafx.scene.image.ImageView
+import javafx.stage.Stage
+import java.io.IOException
 import java.net.URL
 import java.util.*
 
@@ -54,7 +63,52 @@ class StartWorkoutController : Initializable {
     private var exercises: List<Exercise> = listOf()
     private val selectedExercises = mutableListOf<Exercise>()
     private val gson = Gson()
+
+    @FXML
+    //background
+    public lateinit var background: AnchorPane
+    //back button
+    public lateinit var backButton: Button
+    //labels
+    public lateinit var summaryLabel: Label
+    public lateinit var workoutLabel: Label
+    public lateinit var xpLabel: Label
+    //availableLabel
+    public lateinit var availableLabel: Label
+    //selectedLabel
+    public lateinit var selectedLabel: Label
+    //details
+    public lateinit var detailsLabel: Label
+
+
+
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
+        //styles
+        background.setStyle("-fx-background-color: red;")
+        //set all text to white
+        summaryLabel.setStyle("-fx-text-fill: white;")
+        workoutLabel.setStyle("-fx-text-fill: white;")
+        xpLabel.setStyle("-fx-text-fill: white;")
+        totalXpLabel.setStyle("-fx-text-fill: white;")
+        availableLabel.setStyle("-fx-text-fill: white;")
+        selectedLabel.setStyle("-fx-text-fill: white;")
+        detailsLabel.setStyle("-fx-text-fill: white;")
+        //backbutton
+        backButton.graphic = ImageView(
+            Image(
+                "" + javaClass.getResource
+                    ("/goBack.png")
+            )
+        )
+        //remove backbuttontext
+        backButton.text = ""
+        (backButton.graphic as ImageView)?.fitWidth = 70.0
+        (backButton.graphic as ImageView)?.fitHeight = 70.0
+        //change graphic colour to white
+        backButton.graphic.style = "-fx-fill: white;"
+        //remove button background
+        backButton.setStyle("-fx-background-color: transparent;")
+
 
         exercises = AppState.getExercises()
 
@@ -86,6 +140,29 @@ class StartWorkoutController : Initializable {
         selectedExercisesList.items.add(exercise.name)
         updateTotalXP()
     }
+
+    //back button function
+    public fun onBackButtonClick() {
+        try {
+            backButton.text = "Back Button Clicked"
+            //go to previous scene
+            // Load the new FXML file temporary home file
+            val loader = FXMLLoader(javaClass.getResource
+                ("/com/warriorfit/warriorfit/home.fxml"))
+            val root = loader.load<Parent>()
+            val stage = Stage()
+            // Create a new scene with a specified width and height
+            val newScene = Scene(root, 1280.0, 720.0) // Set width to 800 and height to 600
+            // Get the current stage
+            val currentStage = backButton.scene.window as Stage
+            // Set the new scene on the current stage
+            currentStage.scene = newScene
+
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
+
 
     @FXML
     private fun handleRemoveExercise() {

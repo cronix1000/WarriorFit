@@ -8,10 +8,66 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="background" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.warriorfit.warriorfit.SignUpController">
    <children>
-      <BorderPane layoutX="-2.0" layoutY="262.0" prefHeight="320.0" prefWidth="1296.0">
+      <BorderPane layoutX="-1.0" layoutY="186.0" prefHeight="112.0" prefWidth="1296.0">
+         <center>
+            <TextField fx:id="emailField" prefHeight="59.0" prefWidth="50.0" BorderPane.alignment="CENTER" />
+         </center>
+         <right>
+            <Label fx:id="extra" prefHeight="138.0" prefWidth="346.0" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Agency FB Bold" size="58.0" />
+               </font>
+               <padding>
+                  <Insets left="200.0" />
+               </padding>
+            </Label>
+         </right>
+         <left>
+            <Label fx:id="emailText" prefHeight="138.0" prefWidth="430.0" text="Email:" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Agency FB Bold" size="58.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets left="200.0" />
+               </padding>
+            </Label>
+         </left>
+      </BorderPane>
+      <BorderPane prefHeight="157.0" prefWidth="1296.0" />
+      <BorderPane layoutY="293.0" prefHeight="120.0" prefWidth="1296.0">
+         <left>
+            <Label fx:id="passwordText" prefHeight="138.0" prefWidth="430.0" text="Password:" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Agency FB Bold" size="58.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets left="200.0" />
+               </padding>
+            </Label>
+         </left>
+         <right>
+            <Label fx:id="welcomeText31" prefHeight="138.0" prefWidth="346.0" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Agency FB Bold" size="58.0" />
+               </font>
+               <padding>
+                  <Insets left="200.0" />
+               </padding>
+            </Label>
+         </right>
+         <center>
+            <TextField fx:id="passwordField" prefHeight="59.0" prefWidth="50.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+      <BorderPane layoutX="-2.0" layoutY="427.0" prefHeight="94.0" prefWidth="1296.0">
          <left>
             <Label fx:id="usernameText" prefHeight="138.0" prefWidth="430.0" text="Username:" BorderPane.alignment="CENTER">
                <font>
@@ -26,7 +82,7 @@
             </Label>
          </left>
          <center>
-            <TextField fx:id="usernameField" prefHeight="59.0" prefWidth="50.0" BorderPane.alignment="CENTER"  />
+            <TextField fx:id="usernameField" prefHeight="59.0" prefWidth="50.0" BorderPane.alignment="CENTER" />
          </center>
          <right>
             <Label fx:id="welcomeText3" prefHeight="138.0" prefWidth="346.0" BorderPane.alignment="CENTER">
@@ -38,67 +94,6 @@
                </padding>
             </Label>
          </right>
-         <bottom>
-            <BorderPane prefHeight="143.0" prefWidth="1296.0" BorderPane.alignment="CENTER">
-               <left>
-                  <Label fx:id="passwordText" prefHeight="138.0" prefWidth="430.0" text="Password:" BorderPane.alignment="CENTER">
-                     <font>
-                        <Font name="Agency FB Bold" size="58.0" />
-                     </font>
-                     <BorderPane.margin>
-                        <Insets />
-                     </BorderPane.margin>
-                     <padding>
-                        <Insets left="200.0" />
-                     </padding>
-                  </Label>
-               </left>
-               <right>
-                  <Label fx:id="welcomeText31" prefHeight="138.0" prefWidth="346.0" BorderPane.alignment="CENTER">
-                     <font>
-                        <Font name="Agency FB Bold" size="58.0" />
-                     </font>
-                     <padding>
-                        <Insets left="200.0" />
-                     </padding>
-                  </Label>
-               </right>
-               <center>
-                  <TextField fx:id="passwordField" prefHeight="59.0" prefWidth="50.0" BorderPane.alignment="CENTER" />
-               </center>
-            </BorderPane>
-         </bottom>
-      </BorderPane>
-      <BorderPane layoutX="-1.0" layoutY="126.0" prefHeight="297.0" prefWidth="1296.0">
-         <center>
-            <TextField fx:id="emailField" prefHeight="59.0" prefWidth="50.0" BorderPane.alignment="CENTER" />
-         </center>
-         <right>
-            <Label fx:id="extra" prefHeight="138.0" prefWidth="346.0" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="Agency FB Bold" size="58.0" />
-               </font>
-               <padding>
-                  <Insets left="200.0" />
-               </padding>
-            </Label>
-         </right>
-         <bottom>
-            <BorderPane prefHeight="157.0" prefWidth="1296.0" BorderPane.alignment="CENTER" />
-         </bottom>
-         <left>
-            <Label fx:id="emailText" prefHeight="138.0" prefWidth="430.0" text="Email:" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="Agency FB Bold" size="58.0" />
-               </font>
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin>
-               <padding>
-                  <Insets left="200.0" />
-               </padding>
-            </Label>
-         </left>
       </BorderPane>
       <Label fx:id="createText" layoutX="200.0" layoutY="11.0" prefHeight="138.0" prefWidth="882.0" text="Create an Account">
          <font>

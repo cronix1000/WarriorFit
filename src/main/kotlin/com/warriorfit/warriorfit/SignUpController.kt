@@ -69,14 +69,14 @@ class SignUpController {
 
                 Platform.runLater {
                     val alert = Alert(AlertType.INFORMATION)
-                    alert.contentText = "Login Successful"
+                    alert.contentText = "Account Creation Successful"
                     alert.show()
                    // onSuccess()
                 }
             } catch (e: Exception) {
                 Platform.runLater {
                     val alert = Alert(AlertType.ERROR)
-                    alert.contentText = "Login Failed"
+                    alert.contentText = "Account Creation Failed"
                     alert.show()
                     println(e.message)
                 }

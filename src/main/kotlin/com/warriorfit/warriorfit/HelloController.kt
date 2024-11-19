@@ -57,7 +57,7 @@ class HelloController {
         createButton.text = "Create Button Clicked"
 
         // Load the new FXML file temporary home file
-        val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/home.fxml"))
+        val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/create-account.fxml"))
         val root = loader.load<Parent>()
 
         // Create a new scene with a specified width and height

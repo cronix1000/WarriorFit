@@ -16,7 +16,9 @@ import java.io.IOException
 class HomeController {
     @FXML
     public lateinit var settingsButton: Button
-    public lateinit var startWorkoutButton: Button
+
+    public lateinit var startButton: Button
+
     public lateinit var welcomeText: Label
     public lateinit var background: AnchorPane
     public lateinit var currentStatsText: Label
@@ -33,6 +35,11 @@ class HomeController {
         welcomeText.setStyle("-fx-text-fill: white;")
         currentStatsText.setStyle("-fx-text-fill: white;")
         settingsButton.setStyle("-fx-background-radius: 25;")
+
+        //start workout button
+        startButton.setStyle("-fx-background-color: white;")
+        startButton.setStyle("-fx-background-radius: 28;")
+        startButton.setStyle("-fx-text-fill: red;")
 
         //put a settings cogwheel image on button
         //remove settingstext
@@ -85,7 +92,7 @@ class HomeController {
 
     fun onStartWorkoutButtonClick() {
         try {
-            settingsButton.text = "Settings Button Clicked"
+            startButton.text = "Start Workout Button Clicked"
             // Load the new FXML file temporary home file
             val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/start-workout-view.fxml"))
             val root = loader.load<Parent>()
@@ -94,11 +101,11 @@ class HomeController {
             val newScene = Scene(root, 1280.0, 720.0) // Set width to 800 and height to 600
 
             // Get the current stage
-            val currentStage = settingsButton.scene.window as Stage
+            val currentStage = startButton.scene.window as Stage
 
             // Set the new scene on the current stage
             currentStage.scene = newScene
-            currentStage.title = "Warrior Fitness - Settings"
+            currentStage.title = "Warrior Fitness - Start Workout"
 
             // Optionally, you can also set a minimum or fixed size on the stage
             currentStage.minWidth = 1280.0

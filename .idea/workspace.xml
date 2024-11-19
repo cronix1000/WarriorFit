@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="fixed merge erorrs">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/AppState.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/ProfileController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/profile-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/LoginController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/LoginController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SettingsController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SettingsController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SignUpController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/SignUpController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StartWorkoutController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StartWorkoutController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/create-account.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/create-account.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/start-workout-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/start-workout-view.fxml" afterDir="false" />
     </list>
@@ -69,7 +65,7 @@
     &quot;Gradle.WarriorFit.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.HelloApplicationKt.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ethan&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
