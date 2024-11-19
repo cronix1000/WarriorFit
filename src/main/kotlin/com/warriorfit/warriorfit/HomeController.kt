@@ -74,10 +74,10 @@ class HomeController {
         runBlocking {
             val user = AppState.getCurrentUserData()
             level = user!!.data["level"].toString()
-            name = AppState.getUserName()
+            name = AppState.getUserName() //not working
 
             welcomeText.text = "Welcome" + name
-            levelLabel.text = level
+            levelLabel.text = "Current Level: "+level
 
         }
 
