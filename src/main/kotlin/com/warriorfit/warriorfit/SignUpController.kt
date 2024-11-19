@@ -132,10 +132,8 @@ class SignUpController {
         val workoutData = mapOf(
             "workouts_id" to workoutId,
             "date" to Date(),
-            "type" to "initial",
             "duration" to 0,
             "exercises" to listOf<String>(),
-            "muscleGroups" to muscleGroupsId,  // Reference to muscle groups
             "totalXPEarned" to "0",
             "notes" to ""
         )

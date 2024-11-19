@@ -49,6 +49,8 @@ class HelloController {
         ImageView().fitWidth = 800.0
         ImageView().fitHeight = 800.0
         imageView2.image = Image("" + javaClass.getResource("/warriorImage.png"))
+
+
     }
 
 
