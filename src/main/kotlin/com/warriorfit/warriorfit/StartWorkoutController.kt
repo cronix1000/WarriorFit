@@ -70,6 +70,8 @@ class StartWorkoutController : Initializable {
     @FXML
     //background
     public lateinit var background: AnchorPane
+    //Vbox
+
     //back button
     public lateinit var backButton: Button
     //labels
@@ -83,6 +85,11 @@ class StartWorkoutController : Initializable {
     //details
     public lateinit var detailsLabel: Label
 
+    //button
+    public lateinit var addButton: Button
+    public lateinit var removeButton: Button
+    //startButton
+    public lateinit var startButton: Button
 
     private var stats = listOf<Pair<String, Any>>(
         "Chest" to 0,
@@ -123,6 +130,16 @@ class StartWorkoutController : Initializable {
 
 
         exercises = AppState.getExercises()
+
+        //buttons
+        addButton.setStyle("-fx-background-color: white;")
+        removeButton.setStyle("-fx-background-color: white;")
+        //button smooth edges
+        addButton.setStyle("-fx-background-radius: 28;")
+        removeButton.setStyle("-fx-background-radius: 28;")
+        //start button
+        startButton.setStyle("-fx-background-color: white;")
+        startButton.setStyle("-fx-background-radius: 28;")
 
 
         // Set up the available exercises list
@@ -206,6 +223,7 @@ class StartWorkoutController : Initializable {
         val totalXP = selectedExercises.sumOf { it.xp.toInt() }
         totalXpLabel.text = totalXP.toString()
     }
+
     @FXML
     fun handleStartWorkout() {
         if (selectedExercises.isEmpty()) {

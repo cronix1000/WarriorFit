@@ -14,6 +14,11 @@ import javafx.scene.shape.LineTo
 import javafx.scene.shape.MoveTo
 import javafx.scene.shape.Path
 import javafx.scene.text.Text
+import javafx.scene.image.Image
+import javafx.scene.image.ImageView
+import javafx.scene.layout.AnchorPane
+import javafx.scene.layout.Background
+import javafx.scene.layout.VBox
 import javafx.stage.Stage
 import kotlinx.coroutines.runBlocking
 import java.io.IOException
@@ -23,15 +28,25 @@ import kotlin.math.sin
 class StatisticsController {
         @FXML
         public lateinit var backButton: Button
+        //background
+        //currentStatsLabel
+        @FXML private lateinit var currentStatsLabel: Label
 
         @FXML private lateinit var spiderChart: Pane
         @FXML private lateinit var avgSessionValue: Label
         @FXML private lateinit var trainingTimeValue: Label
 
+        @FXML private lateinit var background2: AnchorPane
+        @FXML private lateinit var background: VBox
+
+
         var statsCollection : Collection? = null
         var muscleGroupCollection : Collection? = null
         var usersCollection : Collection? = null
 
+    //admin account
+    //test4@email.com
+    //leaf12312__!
 
 
         private var stats = listOf<Pair<String, Any>>(
@@ -62,6 +77,25 @@ class StatisticsController {
 
 
             drawSpiderChart()
+
+            //background red
+            spiderChart.setStyle("-fx-background-color: red;")
+            //back button
+            backButton.graphic = ImageView(Image("" + javaClass.getResource("/goBack.png")))
+            backButton.text = ""
+            (backButton.graphic as ImageView)?.fitWidth = 70.0
+            (backButton.graphic as ImageView)?.fitHeight = 70.0
+
+            //transparent background
+            backButton.setStyle("-fx-background-color: transparent;")
+
+            //set text to white
+            currentStatsLabel.setStyle("-fx-text-fill: white;")
+
+            //background red
+            background2.setStyle("-fx-background-color: red;")
+            //set background to red
+            background.setStyle("-fx-background-color: red;")
         }
 
         private fun drawSpiderChart() {
