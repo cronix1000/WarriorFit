@@ -85,13 +85,11 @@ class SignUpController {
         }
     }
 
-    // Helper function to create user profile in database
     private suspend fun createUserProfile(
         userId: String,
         email: String,
         username: String
     ) {
-        // Create stats document
         val statsId = ID.unique().substring(0, 14)
         val statsData = mapOf(
             "stats_id" to statsId,
