@@ -98,6 +98,8 @@ class HelloApplication : Application() {
 suspend fun main() = coroutineScope {
     Application.launch(HelloApplication::class.java)
     AppState.loadExercises()
+    AppState.excersieDB = databases.get("6732731c0015a0af0d1e")
+
     //    prepareDatabase()
         //seedDatabase()
     //    getTodos()

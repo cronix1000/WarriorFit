@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="Fixed create account button, and you can now make an account. Added Workout button. Added CSS to start workout page.">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StatisticsController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/statistics.fxml" afterDir="false" />
+    <list default="true" id="a3e08e84-f47b-4547-b14c-21d9b21c5c36" name="Changes" comment="wokrouts loaded">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HomeController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/AppState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/AppState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/HelloApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StatisticsController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/warriorfit/warriorfit/StatisticsController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/statistics.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/warriorfit/warriorfit/statistics.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +63,7 @@
     &quot;Gradle.WarriorFit.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.HelloApplicationKt.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ethan&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -93,6 +94,7 @@
       <workItem from="1731471794761" duration="2555000" />
       <workItem from="1731778963971" duration="1351000" />
       <workItem from="1731875615810" duration="14572000" />
+      <workItem from="1732029755730" duration="1680000" />
     </task>
     <task id="LOCAL-00001" summary="modified scenes to take images from the resource folder">
       <option name="closed" value="true" />
