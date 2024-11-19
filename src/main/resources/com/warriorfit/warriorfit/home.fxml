@@ -22,7 +22,7 @@
             </Label>
          </top>
          <center>
-            <Label fx:id="currentStatsText" text="Current Fitness Statistics:" BorderPane.alignment="CENTER">
+            <Label fx:id="levelLabel" text="Current Level: 0" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Agency FB" size="40.0" />
                </font>
@@ -36,7 +36,12 @@
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="startButton" layoutX="510.0" layoutY="360.0" mnemonicParsing="false" onAction="#onStartWorkoutButtonClick" text="Start Workout">
+      <Button fx:id="startButton" layoutX="478.0" layoutY="392.0" mnemonicParsing="false" onAction="#onStartWorkoutButtonClick" prefHeight="82.0" prefWidth="323.0" text="Start Workout">
+         <font>
+            <Font name="Agency FB Bold" size="42.0" />
+         </font>
+      </Button>
+      <Button fx:id="statisticsButton" layoutX="503.0" layoutY="277.0" mnemonicParsing="false" onAction="#onStatisticsButtonClick" prefHeight="82.0" prefWidth="274.0" text="Statistics">
          <font>
             <Font name="Agency FB Bold" size="42.0" />
          </font>

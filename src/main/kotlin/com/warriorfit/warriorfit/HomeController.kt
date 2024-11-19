@@ -21,10 +21,13 @@ class HomeController {
 
     public lateinit var welcomeText: Label
     public lateinit var background: AnchorPane
-    public lateinit var currentStatsText: Label
+    public lateinit var levelLabel: Label
 
     //imageview warriorLogo
     public lateinit var warriorLogo: ImageView
+
+    //statistics button
+    public lateinit var statisticsButton: Button
 
     @FXML
 //initialize function
@@ -33,13 +36,18 @@ class HomeController {
         background.setStyle("-fx-background-color: red;")
         //white text
         welcomeText.setStyle("-fx-text-fill: white;")
-        currentStatsText.setStyle("-fx-text-fill: white;")
+        levelLabel.setStyle("-fx-text-fill: white;")
         settingsButton.setStyle("-fx-background-radius: 25;")
 
         //start workout button
         startButton.setStyle("-fx-background-color: white;")
         startButton.setStyle("-fx-background-radius: 28;")
         startButton.setStyle("-fx-text-fill: red;")
+
+        //statistics button
+        statisticsButton.setStyle("-fx-background-color: white;")
+        statisticsButton.setStyle("-fx-background-radius: 28;")
+        statisticsButton.setStyle("-fx-text-fill: red;")
 
         //put a settings cogwheel image on button
         //remove settingstext
@@ -59,6 +67,40 @@ class HomeController {
         warriorLogo.image =
             Image("" + javaClass.getResource("/warriorImage.png"))
 
+        //get the current username for the welcome text
+
+        //get the current level for the level text
+
+    }
+
+    public fun onStatisticsButtonClick() {
+        try {
+            statisticsButton.text = "Statistics Button Clicked"
+            // Load the new FXML file temporary home file
+            val loader = FXMLLoader(javaClass.getResource
+            ("/com/warriorfit/warriorfit/statistics.fxml"))
+            val root = loader.load<Parent>()
+
+            // Create a new scene with a specified width and height
+            val newScene = Scene(root, 1280.0, 720.0) // Set width to 800 and height to 600
+
+            // Get the current stage
+            val currentStage = statisticsButton.scene.window as Stage
+
+            // Set the new scene on the current stage
+            currentStage.scene = newScene
+            currentStage.title = "Warrior Fitness - Statistics"
+
+            // Optionally, you can also set a minimum or fixed size on the stage
+            currentStage.minWidth = 1280.0
+            currentStage.minHeight = 720.0
+
+            // Display the stage
+            currentStage.show()
+
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
     }
 
     public fun onSettingsButtonClick() {
