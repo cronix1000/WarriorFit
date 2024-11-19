@@ -8,6 +8,49 @@
 
 <AnchorPane fx:id="background" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.warriorfit.warriorfit.StartWorkoutController">
     <children>
+<VBox>
+    <HBox spacing="10" VBox.vgrow="ALWAYS">
+        <!-- Available Exercises -->
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Available Exercises" style="-fx-font-weight: bold"/>
+            <ListView fx:id="availableExercisesList" VBox.vgrow="ALWAYS"/>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Add Exercise" onAction="#handleAddExercise"/>
+            </HBox>
+        </VBox>
 
+        <!-- Selected Exercises -->
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Selected Exercises" style="-fx-font-weight: bold"/>
+            <ListView fx:id="selectedExercisesList" VBox.vgrow="ALWAYS"/>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Remove Exercise" onAction="#handleRemoveExercise"/>
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <!-- Exercise Details -->
+    <VBox spacing="5">
+        <Label text="Exercise Details" style="-fx-font-weight: bold"/>
+        <TextArea fx:id="exerciseDetailsArea" editable="false" wrapText="true" prefRowCount="4"/>
+    </VBox>
+
+    <!-- Workout Summary -->
+    <VBox spacing="5">
+        <Label text="Workout Summary" style="-fx-font-weight: bold"/>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Total XP:"/>
+            <Label fx:id="totalXpLabel" text="0"/>
+        </HBox>
+        <TextArea fx:id="workoutNotesArea" promptText="Add workout notes..." prefRowCount="3"/>
+    </VBox>
+
+    <!-- Start Workout Button -->
+    <HBox alignment="CENTER" spacing="10">
+        <Button text="Start Workout" onAction="#handleStartWorkout"
+                style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+    </HBox>
+
+</VBox>
     </children>
 </AnchorPane>

@@ -36,9 +36,10 @@
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="startWorkoutButton" layoutX="421.0" layoutY="359.0" mnemonicParsing="false" onAction="#onStartWorkoutButtonClick" text="Start Workout">
+      <Button fx:id="startWorkoutbutton" layoutX="1014.0" layoutY="74.0"  mnemonicParsing="false" onAction="#onStartWorkoutButtonClick" text="Settings">
+
          <font>
-            <Font name="System Bold" size="53.0" />
+            <Font size="25.0" />
          </font>
       </Button>
 
