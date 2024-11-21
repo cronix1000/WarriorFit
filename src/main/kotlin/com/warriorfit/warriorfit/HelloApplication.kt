@@ -26,27 +26,10 @@ val client = Client()
 
 val databases = Databases(client)
 
-var todoDatabase: Database? = null
-var todoCollection: Collection? = null
-
-suspend fun getTodos() {
-    val todos = databases.listDocuments(todoDatabase?.id!!, todoCollection?.id!!)
-    for (todo in todos.documents) {
-        println(
-            """
-            Title: ${todo.data["title"]}
-            Description: ${todo.data["description"]}
-            Is Todo Complete: ${todo.data["isComplete"]}
-            """.trimIndent()
-        )
-    }
-}
-
 class HelloApplication : Application() {
     override fun start(stage: Stage) {
         val fxmlLoader = FXMLLoader(HelloApplication::class.java.getResource("hello-view.fxml"))
         val scene = Scene(fxmlLoader.load(), 1280.0, 720.0)
-        //image
         scene.stylesheets.add("styles/style.css")
         stage.title = "Warrior Fitness"
         stage.scene = scene

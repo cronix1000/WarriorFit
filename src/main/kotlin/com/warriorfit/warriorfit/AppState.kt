@@ -14,13 +14,9 @@ import kotlinx.coroutines.withContext
 
 
 object AppState {
-    private const val ENDPOINT = "YOUR_APPWRITE_ENDPOINT"
-    private const val PROJECT_ID = "6732731c0015a0af0d1e"
     private const val DATABASE_ID = "6732731c0015a0af0d1e"
     private const val STATS_COLLECTION_ID = "673a59ce0037e409146e"
-    private const val MUSCLE_GROUPS_COLLECTION_ID = "673a59c600068e20490a"
     private const val USERS_COLLECTION_ID = "6736dacb0021a324feed"
-    private const val WORKOUTS_COLLECTION_ID = "6736dc8f0019010e89b3"
 
 
     val client = Client()
@@ -34,14 +30,11 @@ object AppState {
     public var usersCollection: Collection? = null
 
     private  var userName: String = ""
-    // User state
     private var userId: String = ""
 
-    // Exercise data
     private var exercises: List<Exercise> = listOf()
     private val gson = Gson()
 
-    // Initialization flag
     private var isExercisesLoaded = false
 
     fun setUserName(name: String){
@@ -57,7 +50,7 @@ object AppState {
     }
 
     fun getUserId(): String {
-        return userId ?: throw IllegalStateException("User ID not set. Make sure user is logged in.")
+        return userId
     }
 
     fun loadExercises() {
@@ -92,7 +85,6 @@ object AppState {
         userId = ""
     }
 
-        // Get current user data including relationships
         suspend fun getCurrentUserData(): Document<Map<String, Any>>? {
             return withContext(Dispatchers.IO) {
                 try {
@@ -108,7 +100,6 @@ object AppState {
             }
         }
 
-        // Get user's stats and muscle groups in one call
         suspend fun getUserFitnessData(): Triple<Map<String, Any>?,Map<String, Any>?, Map<String, Any>?> {
             return withContext(Dispatchers.IO) {
                 try {
@@ -130,7 +121,6 @@ object AppState {
             }
         }
 
-        // Update user's stats
         suspend fun updateUserStats(
             strength: Double,
             endurance: Double,
@@ -144,8 +134,6 @@ object AppState {
                     val stats = userData.data["stats_id"] as? Map<String, Any>
                     val statsId = stats?.get("stats_id") as? String
                         ?: throw Exception("Stats ID not found")
-
-
                     try {
                         val response = databases.updateDocument(
                             databaseId = DATABASE_ID,
@@ -166,38 +154,6 @@ object AppState {
                     }
                 } catch (e: Exception) {
                     println("Error updating user stats: ${e.message}")
-                }
-            }
-        }
-
-        // Update user's muscle groups
-        suspend fun updateUserMuscleGroups(
-            chest: Int,
-            back: Int,
-            legs: Int,
-            shoulders: Int,
-            core: Int
-        ) {
-            withContext(Dispatchers.IO) {
-                try {
-                    val userData = getCurrentUserData() ?: throw Exception("User data not found")
-                    val muscleGroupsId = userData.data["muscle_groups_id"] as? String
-                        ?: throw Exception("Muscle groups ID not found")
-
-                    databases.updateDocument(
-                        databaseId = DATABASE_ID,
-                        collectionId = MUSCLE_GROUPS_COLLECTION_ID,
-                        documentId = muscleGroupsId,
-                        data = mapOf(
-                            "chest" to chest,
-                            "back" to back,
-                            "legs" to legs,
-                            "shoulders" to shoulders,
-                            "core" to core
-                        )
-                    )
-                } catch (e: Exception) {
-                    println("Error updating muscle groups: ${e.message}")
                 }
             }
         }

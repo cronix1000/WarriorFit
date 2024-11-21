@@ -52,15 +52,12 @@ class SignUpController {
     ) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                // Create Appwrite account
                 val user = account.create(
                     userId = ID.unique(),
                     email = email,
                     password = password,
                     name = username
                 )
-
-                // Create user profile in database
                 createUserProfile(
                     userId = user.id,
                     email = email,
@@ -71,7 +68,6 @@ class SignUpController {
                     val alert = Alert(AlertType.INFORMATION)
                     alert.contentText = "Account Creation Successful"
                     alert.show()
-                   // onSuccess()
                 }
             } catch (e: Exception) {
                 Platform.runLater {
@@ -102,12 +98,11 @@ class SignUpController {
 
         databases.createDocument(
             databaseId = "6732731c0015a0af0d1e",
-            collectionId = "673a59ce0037e409146e", // Replace with actual collection ID
+            collectionId = "673a59ce0037e409146e",
             documentId = statsId,
             data = statsData
         )
 
-        // Create muscle groups document
         val muscleGroupsId = ID.unique().substring(0, 14)
         val muscleGroupsData = mapOf(
             "muscle_groups_id" to muscleGroupsId,
@@ -227,21 +222,16 @@ class SignUpController {
             val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/hello-view.fxml"))
             val root = loader.load<Parent>()
 
-            // Create a new scene with a specified width and height
-            val newScene = Scene(root, 1280.0, 720.0) // Set width to 800 and height to 600
+            val newScene = Scene(root, 1280.0, 720.0)
 
-            // Get the current stage
             val currentStage = backButton.scene.window as Stage
 
-            // Set the new scene on the current stage
             currentStage.scene = newScene
             currentStage.title = "Warrior Fitness"
 
-            // Optionally, you can also set a minimum or fixed size on the stage
             currentStage.minWidth = 1280.0
             currentStage.minHeight = 720.0
 
-            // Display the stage
             currentStage.show()
 
         } catch (e: IOException) {
@@ -249,8 +239,7 @@ class SignUpController {
         }
     }
 
-    //on submit button click
-    public fun onSubmitButtonClick() { //takes user to login after
+    public fun onSubmitButtonClick() {
 
         createAccount(emailField.text,passwordField.text, usernameField.text)
 
@@ -258,21 +247,16 @@ class SignUpController {
             val loader = FXMLLoader(javaClass.getResource("/com/warriorfit/warriorfit/login.fxml"))
             val root = loader.load<Parent>()
 
-            // Create a new scene with a specified width and height
-            val newScene = Scene(root, 1280.0, 720.0) // Set width to 800 and height to 600
+            val newScene = Scene(root, 1280.0, 720.0)
 
-            // Get the current stage
             val currentStage = submitButton.scene.window as Stage
 
-            // Set the new scene on the current stage
             currentStage.scene = newScene
             currentStage.title = "Warrior Fitness - Login"
 
-            // Optionally, you can also set a minimum or fixed size on the stage
             currentStage.minWidth = 1280.0
             currentStage.minHeight = 720.0
 
-            // Display the stage
             currentStage.show()
 
         } catch (e: IOException) {

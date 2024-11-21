@@ -121,8 +121,8 @@ class StartWorkoutController : Initializable {
         )
         //remove backbuttontext
         backButton.text = ""
-        (backButton.graphic as ImageView)?.fitWidth = 70.0
-        (backButton.graphic as ImageView)?.fitHeight = 70.0
+        (backButton.graphic as ImageView).fitWidth = 70.0
+        (backButton.graphic as ImageView).fitHeight = 70.0
         //change graphic colour to white
         backButton.graphic.style = "-fx-fill: white;"
         //remove button background
@@ -308,19 +308,18 @@ class StartWorkoutController : Initializable {
 
 
 
-                val currentStatsMap = statsBack!!.associate {
+                val currentStatsMap = statsBack.associate {
                     it.first.lowercase() to it.second
                 }
 
-                var strength = currentStatsMap["strength"] as? Double ?: 0.0
-                var endurance = currentStatsMap["endurance"] as? Double ?: 0.0
-                var flexibility = currentStatsMap["flexibility"] as? Double ?: 0.0
-                var speed = currentStatsMap["speed"] as? Double ?: 0.0
-                var balance = currentStatsMap["balance"] as? Double ?: 0.0
+                val strength = currentStatsMap["strength"] as? Double ?: 0.0
+                val endurance = currentStatsMap["endurance"] as? Double ?: 0.0
+                val flexibility = currentStatsMap["flexibility"] as? Double ?: 0.0
+                val speed = currentStatsMap["speed"] as? Double ?: 0.0
+                val balance = currentStatsMap["balance"] as? Double ?: 0.0
 
                 AppState.updateUserStats(strength, endurance, flexibility, speed, balance)
 
-                // Clear the form after successful save
                 selectedExercises.clear()
                 selectedExercisesList.items.clear()
                 workoutNotesArea.text = ""
@@ -342,13 +341,9 @@ class StartWorkoutController : Initializable {
     fun calculateStats(
         workoutData: List<Exercise>,
         currentStats: List<Pair<String, Any>>
-    ): List<Pair<String, Any>>? {
-//        try {
-
-        // Increment factor for scaling
+    ): List<Pair<String, Any>> {
         val incrementFactor = 0.004
 
-        // Initialize muscle group stats
         val muscleGroups = mutableMapOf<String, Double>()
 
 
@@ -356,7 +351,6 @@ class StartWorkoutController : Initializable {
             it.first.lowercase() to it.second
         }
 
-        // Initialize user stats with lowercase keys
         var strength = currentStatsMap["strength"] as? Double ?: 0.0
         var endurance = currentStatsMap["endurance"] as? Double ?: 0.0
         var flexibility = currentStatsMap["flexibility"] as? Double ?: 0.0
@@ -411,15 +405,8 @@ class StartWorkoutController : Initializable {
             "muscleGroups" to muscleGroups.mapValues { round(it.value * 1000) / 1000 }
         )
         println(finalStats)
-        // Return updated stats
         return finalStats
 
-//    } catch (e: Exception) {
-//        val alert = Alert(Alert.AlertType.ERROR)
-//        alert.contentText = "Error calculating stats" + e.message
-//        alert.show()
-//        return  null
-//    }
     }
 
 }

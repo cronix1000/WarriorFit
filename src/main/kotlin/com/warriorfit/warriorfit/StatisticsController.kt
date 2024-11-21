@@ -89,18 +89,25 @@ class StatisticsController {
 
     }
 
+    /**
+     * Draws a spider (radar) chart in the spiderChart container.
+     *
+     * This function does the following:
+     * 1. Calculates the center and radius of the chart based on container dimensions
+     * 2. Creates the background web/grid of the spider chart
+     * 3. Draws a polygon representing the data points
+     * 4. Adds axis labels around the chart
+     * 5. Sets up resize event listeners to dynamically update the chart
+     */
     private fun drawSpiderChart() {
         val centerX = spiderChart.width / 2
         val centerY = spiderChart.height / 2
         val radius = minOf(centerX, centerY) * 0.8
 
-        // Draw background web
         val backgroundWeb = createWebShape(centerX, centerY, radius, Color.web("#333333"))
 
-        // Draw data polygon
         val dataPolygon = createDataPolygon(centerX, centerY, radius)
 
-        // Add labels
         val labels = createAxisLabels(centerX, centerY, radius)
 
         spiderChart.children.addAll(backgroundWeb, dataPolygon)
@@ -111,6 +118,15 @@ class StatisticsController {
         spiderChart.heightProperty().addListener { _, _, _ -> updateChart() }
     }
 
+    /**
+     * Creates the background web/grid shape for the spider chart.
+     *
+     * @param centerX X-coordinate of the chart's center
+     * @param centerY Y-coordinate of the chart's center
+     * @param radius Radius of the chart
+     * @param color Color of the web lines
+     * @return Path representing the web/grid lines
+     */
     private fun createWebShape(centerX: Double, centerY: Double, radius: Double, color: Color): Path {
         val path = Path()
         path.stroke = color
@@ -133,6 +149,14 @@ class StatisticsController {
         return path
     }
 
+    /**
+     * Creates a polygon representing the data points on the spider chart.
+     *
+     * @param centerX X-coordinate of the chart's center
+     * @param centerY Y-coordinate of the chart's center
+     * @param radius Radius of the chart
+     * @return Path representing the data polygon
+     */
     private fun createDataPolygon(centerX: Double, centerY: Double, radius: Double): Path {
         val path = Path()
         path.fill = Color.web("#007AFF", 0.3)
@@ -157,6 +181,14 @@ class StatisticsController {
         return path
     }
 
+    /**
+     * Creates labels for each axis of the spider chart.
+     *
+     * @param centerX X-coordinate of the chart's center
+     * @param centerY Y-coordinate of the chart's center
+     * @param radius Radius of the chart
+     * @return List of Text nodes representing axis labels
+     */
     private fun createAxisLabels(centerX: Double, centerY: Double, radius: Double): List<Text> {
         return stats.mapIndexed { index, stat ->
             val angle = 2 * Math.PI * index / 6 - Math.PI / 2

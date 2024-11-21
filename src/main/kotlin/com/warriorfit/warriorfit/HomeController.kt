@@ -16,51 +16,51 @@ import java.io.IOException
 
 class HomeController {
     @FXML
-    public lateinit var settingsButton: Button
+    lateinit var settingsButton: Button
 
-    public lateinit var startButton: Button
+    lateinit var startButton: Button
 
-    public lateinit var welcomeText: Label
-    public lateinit var background: AnchorPane
-    public lateinit var levelLabel: Label
+    lateinit var welcomeText: Label
+    lateinit var background: AnchorPane
+    lateinit var levelLabel: Label
 
     //imageview warriorLogo
-    public lateinit var warriorLogo: ImageView
+    lateinit var warriorLogo: ImageView
 
     //statistics button
-    public lateinit var statisticsButton: Button
+    lateinit var statisticsButton: Button
 
     @FXML
 //initialize function
-    public fun initialize() {
+    fun initialize() {
         // background red
-        background.setStyle("-fx-background-color: red;")
+        background.style = "-fx-background-color: red;"
         //white text
-        welcomeText.setStyle("-fx-text-fill: white;")
-        levelLabel.setStyle("-fx-text-fill: white;")
-        settingsButton.setStyle("-fx-background-radius: 25;")
+        welcomeText.style = "-fx-text-fill: white;"
+        levelLabel.style = "-fx-text-fill: white;"
+        settingsButton.style = "-fx-background-radius: 25;"
 
         //start workout button
-        startButton.setStyle("-fx-background-color: white;")
-        startButton.setStyle("-fx-background-radius: 28;")
-        startButton.setStyle("-fx-text-fill: red;")
+        startButton.style = "-fx-background-color: white;"
+        startButton.style = "-fx-background-radius: 28;"
+        startButton.style = "-fx-text-fill: red;"
 
         //statistics button
-        statisticsButton.setStyle("-fx-background-color: white;")
-        statisticsButton.setStyle("-fx-background-radius: 28;")
-        statisticsButton.setStyle("-fx-text-fill: red;")
+        statisticsButton.style = "-fx-background-color: white;"
+        statisticsButton.style = "-fx-background-radius: 28;"
+        statisticsButton.style = "-fx-text-fill: red;"
 
         //put a settings cogwheel image on button
         //remove settingstext
         settingsButton.text = ""
         //graphic size and location 50x50
         settingsButton.graphic = ImageView(Image("" + javaClass.getResource("/settings.png")))
-        (settingsButton.graphic as ImageView)?.fitWidth = 70.0
-        (settingsButton.graphic as ImageView)?.fitHeight = 70.0
+        (settingsButton.graphic as ImageView).fitWidth = 70.0
+        (settingsButton.graphic as ImageView).fitHeight = 70.0
         //change graphic colour to white
         settingsButton.graphic.style = "-fx-fill: white;"
         //remove button background
-        settingsButton.setStyle("-fx-background-color: transparent;")
+        settingsButton.style = "-fx-background-color: transparent;"
 
         //image size
         ImageView().fitWidth = 500.0
@@ -68,15 +68,14 @@ class HomeController {
         warriorLogo.image =
             Image("" + javaClass.getResource("/warriorImage.png"))
 
-        //get the current username for the welcome text
         var name = ""
         var level = ""
         runBlocking {
             val user = AppState.getCurrentUserData()
             level = user!!.data["level"].toString()
-            name = AppState.getUserName() //not working
+            name = AppState.getUserName()
 
-            levelLabel.text = "Current Level: " + level
+            levelLabel.text = "Current Level: $level"
 
             //if level is 1 then Welcome Beginner
             //level is 0
@@ -91,7 +90,7 @@ class HomeController {
         }
     }
 
-    public fun onStatisticsButtonClick() {
+    fun onStatisticsButtonClick() {
         try {
             statisticsButton.text = "Statistics Button Clicked"
             // Load the new FXML file temporary home file
@@ -121,7 +120,7 @@ class HomeController {
         }
     }
 
-    public fun onSettingsButtonClick() {
+    fun onSettingsButtonClick() {
         try {
             settingsButton.text = "Settings Button Clicked"
             // Load the new FXML file temporary home file
