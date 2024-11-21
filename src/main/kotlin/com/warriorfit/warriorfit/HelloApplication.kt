@@ -29,51 +29,6 @@ val databases = Databases(client)
 var todoDatabase: Database? = null
 var todoCollection: Collection? = null
 
-suspend fun prepareDatabase() {
-  //  todoDatabase = databases.get("6732731c0015a0af0d1e")
- //   todoCollection = databases.getCollection("6732731c0015a0af0d1e", "67342fdd002592c10942")
-}
-
-//suspend fun seedDatabase() {
-//    val testTodo1 = mapOf(
-//        "title" to "Buy apples",
-//        "description" to "At least 2KGs",
-//        "isComplete" to true
-//    )
-//
-//    val testTodo2 = mapOf(
-//        "title" to "Wash the apples",
-//        "isComplete" to true
-//    )
-//
-//    val testTodo3 = mapOf(
-//        "title" to "Cut the apples",
-//        "description" to "Don't forget to pack them in a box",
-//        "isComplete" to false
-//    )
-//
-//    databases.createDocument(
-//        databaseId = todoDatabase?.id!!,
-//        collectionId = todoCollection?.id!!,
-//        documentId = ID.unique(),
-//        data = testTodo1
-//    )
-//
-//    databases.createDocument(
-//        databaseId = todoDatabase?.id!!,
-//        collectionId = todoCollection?.id!!,
-//        documentId = ID.unique(),
-//        data = testTodo2
-//    )
-//
-//    databases.createDocument(
-//        databaseId = todoDatabase?.id!!,
-//        collectionId = todoCollection?.id!!,
-//        documentId = ID.unique(),
-//        data = testTodo3
-//    )
-//}
-
 suspend fun getTodos() {
     val todos = databases.listDocuments(todoDatabase?.id!!, todoCollection?.id!!)
     for (todo in todos.documents) {
@@ -103,9 +58,4 @@ suspend fun main() = coroutineScope {
     Application.launch(HelloApplication::class.java)
     AppState.loadExercises()
     AppState.excersieDB = databases.get("6732731c0015a0af0d1e")
-
-    //    prepareDatabase()
-        //seedDatabase()
-    //    getTodos()
-
 }
