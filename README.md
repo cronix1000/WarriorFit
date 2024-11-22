@@ -51,9 +51,9 @@ cd WarriorFit
 
 ## Technologies Used
 
-- **Kotlin
-- **Spring Boot
-- **JavaFX
+- Kotlin
+- Spring Boot
+- JavaFX
 
 ## Contributing 
 
